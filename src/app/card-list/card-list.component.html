@@ -1,0 +1,20 @@
+<p>
+    card-list works!
+</p>
+
+{{cards[1]|json}}
+<div class="row">
+    <div class="col">
+
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Cost</th>
+            </thead>
+            <tr *ngFor="let card of cards">
+                <td class="card-title">{{ card[0] }}</td>
+                <td>{{card[2]}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { PapaParseModule } from 'ngx-papaparse';
+import { CardsModule } from './cards/cards.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PapaParseModule } from 'ngx-papaparse';
   ],
   imports: [
     BrowserModule,
-    PapaParseModule
+    PapaParseModule,
+    CardsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

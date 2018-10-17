@@ -1,20 +1,34 @@
-<p>
-    card-list works!
-</p>
-
-{{cards[1]|json}}
 <div class="row">
     <div class="col">
 
-        <table class="table">
+        <table class="table table-sm">
             <thead>
-                <th>Name</th>
+                <th></th>
                 <th>Cost</th>
+
+                <th>Name</th>
+                <th></th>
+                <th></th>
+                <td>Tags</td>
+
             </thead>
             <tr *ngFor="let card of cards">
-                <td class="card-title">{{ card[0] }}</td>
-                <td>{{card[2]}}</td>
+                <td class="type">
+                    <div class=type-{{card[3]}}></div>
+                </td>
+                <td>
+                    <div class="money">{{card[2]}}</div>
+                </td>
+                <td class="card-title"> {{ card[0] }}</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div *ngIf="card[28] === '1'" class="tag building"><i class="fas fa-warehouse"></i></div>
+                    <div *ngIf="card[29] === '1'" class="tag space"><i class="fas fa-haykal"></i></div>
+                    <div *ngIf="card[34] === '1'" class="tag earth"><i class="fas fa-globe-americas"></i></div>
+                </td>
             </tr>
         </table>
     </div>
+
 </div>

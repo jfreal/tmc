@@ -32,7 +32,7 @@ export class CardListComponent implements OnInit {
     
     this.cards = []    
 
-    this.papa.parse('http://tmcmaster.azurewebsites.net/cards.csv',{
+    this.papa.parse('http://tmcmaster.azurewebsites.net/assets/cards.csv',{
     download: true,    
     complete: (result) => {
             console.log('Parsed: ', result);

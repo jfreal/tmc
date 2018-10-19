@@ -77,7 +77,7 @@
                         "assets": [
                             "src/favicon.ico",
                             "src/assets",
-                            "src/cards.csv",
+                            "assets/cards.csv",
                             "assets/img/mars.png",
                             "assets/img/jovian.png"
                         ]

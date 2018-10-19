@@ -9,10 +9,28 @@ import { Papa } from 'ngx-papaparse';
 export class CardListComponent implements OnInit {
   cards: any[];
 
+
+  isNumber(value: string | number): boolean
+{
+   return !isNaN(Number(value.toString()));
+}
+
+  counter(n: string): any[] {     
+
+
+    if(n && this.isNumber(n)){      
+      return Array.from(Array(Number(n)).keys());
+    }
+
+    return Array(0);
+
+  }
+
+
   constructor(private papa: Papa) {
     const csvData = '"Hello","World!"';
     
-    this.cards = []
+    this.cards = []    
 
     this.papa.parse('http://localhost:4200/cards.csv',{
     download: true,    

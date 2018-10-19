@@ -47,6 +47,10 @@ pre {
     background: linear-gradient(to bottom, #CCCCCC 19px, #A6A6A6 20px);
 }
 
+.venus {
+    background: linear-gradient(to bottom, #07AAE3 19px, #0E7DC4 20px);
+}
+
 .science .fas {
     font-size: 28px;
 }
@@ -80,6 +84,37 @@ pre {
     font-size: 26px;
 }
 
+.jovian {
+    background: url(/assets/img/jovian.png) no-repeat center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    padding-top: 0px;
+}
+
+.tag.vp {
+    background: url(/assets/img/mars.png) no-repeat center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    font-weight: 900;
+    font-size: 28px;
+    vertical-align: middle;
+    padding-top: 0px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #F9CD08;
+}
+
+.tag.venus {
+    font-weight: 900;
+    font-size: 28px;
+    vertical-align: middle;
+    padding-top: 0px;
+    color: #fff;
+}
+
 .tag {
     border: 2px solid #000;
     height: 42px;
@@ -88,7 +123,6 @@ pre {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     text-align: center;
-    font-size: 18px;
     padding-top: 6px;
     float: left;
     margin-left: 3px;

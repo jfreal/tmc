@@ -9,7 +9,8 @@
                 <th>Name</th>
                 <th></th>
                 <th></th>
-                <td>Tags</td>
+                <th>Tags</th>
+                <th>VP</th>
 
             </thead>
             <tr *ngFor="let card of cards">
@@ -23,18 +24,22 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <div *ngIf="card[27] === '1'" class="tag science"><i class="fas fa-atom"></i></div>
-                    <div *ngIf="card[28] === '1'" class="tag building"><i class="fas fa-warehouse"></i></div>
-                    <div *ngIf="card[29] === '1'" class="tag space"><i class="fas fa-haykal"></i></div>
-                    <div *ngIf="card[30] === '1'" class="tag microbe"><i class="fas fa-bug"></i></div>
-                    <div *ngIf="card[31] === '1'" class="tag plant"><i class="fas fa-leaf"></i></div>
-                    <div *ngIf="card[32] === '1'" class="tag animal"><i class="fas fa-paw"></i></div>
-                    <div *ngIf="card[33] === '1'" class="tag city"><i class="fas fa-city"></i> </div>
-                    <div *ngIf="card[34] === '1'" class="tag earth"><i class="fas fa-globe-americas"></i></div>
-                    <div *ngIf="card[35] === '1'" class="tag jovian"><i class="fas fa-leaf"></i></div>
-                    <div *ngIf="card[36] === '1'" class="tag energy"><i class="fas fa-bolt"></i></div>
-                    <div *ngIf="card[37] === '1'" class="tag venus"><i class="fas fa-bolt"></i></div>
-                    <div *ngIf="card[38] === '1'" class="tag event"><i class="fas fa-long-arrow-alt-down"></i></div>
+                    <div *ngFor="let i of counter(card[27])" class=" tag science "><i class="fas fa-atom "></i></div>
+                    <div *ngFor="let i of counter(card[28])" class="tag building "><i class="fas fa-warehouse "></i></div>
+                    <div *ngFor="let i of counter(card[29])" class="tag space "><i class="fas fa-haykal "></i></div>
+                    <div *ngFor="let i of counter(card[30])" class="tag microbe "><i class="fas fa-bug "></i></div>
+                    <div *ngFor="let i of counter(card[31])" class="tag plant "><i class="fas fa-leaf "></i></div>
+                    <div *ngFor="let i of counter(card[32])" class="tag animal "><i class="fas fa-paw "></i></div>
+                    <div *ngFor="let i of counter(card[33])" class="tag city "><i class="fas fa-city "></i> </div>
+                    <div *ngFor="let i of counter(card[34])" class="tag earth "><i class="fas fa-globe-americas "></i></div>
+                    <div *ngFor="let i of counter(card[35])" class="tag jovian "></div>
+                    <div *ngFor="let i of counter(card[36])" class="tag energy "><i class="fas fa-bolt "></i></div>
+                    <div *ngFor="let i of counter(card[37])" class="tag venus ">V</div>
+                    <div *ngFor="let i of counter(card[38])" class="tag event "><i class="fas fa-long-arrow-alt-down "></i></div>
+                </td>
+                <td>
+                    <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}</div>
+
                 </td>
             </tr>
         </table>

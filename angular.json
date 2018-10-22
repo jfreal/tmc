@@ -77,9 +77,8 @@
                         "assets": [
                             "src/favicon.ico",
                             "src/assets",
-                            "assets/cards.csv",
-                            "assets/img/mars.png",
-                            "assets/img/jovian.png"
+                            "assets/img",
+                            "src/assets/cards.csv"
                         ]
                     }
                 },

@@ -3,17 +3,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { PapaParseModule } from 'ngx-papaparse';
-import { CardsModule } from './cards/cards.module';
+import { CardComponent } from './card/card.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardListComponent
+    CardListComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     PapaParseModule,
-    CardsModule
+    AppRoutingModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Papa } from 'ngx-papaparse';
+import { CardsService } from '../cards.service';
 
 @Component({
   selector: 'app-card-list',
@@ -9,39 +9,26 @@ import { Papa } from 'ngx-papaparse';
 export class CardListComponent implements OnInit {
   cards: any[];
 
+  constructor(private cardsService: CardsService) { 
+    cardsService.getCards((result)=>{
+      this.cards = result;
+    });
+  }
 
   isNumber(value: string | number): boolean
-{
-   return !isNaN(Number(value.toString()));
-}
+  {
+    return !isNaN(Number(value.toString()));
+  }
 
-  counter(n: string): any[] {     
-
+  counter(n: string): any[] {    
 
     if(n && this.isNumber(n)){      
       return Array.from(Array(Number(n)).keys());
     }
 
     return Array(0);
-
   }
-
-
-  constructor(private papa: Papa) {
-    const csvData = '"Hello","World!"';
-    
-    this.cards = []    
-
-    this.papa.parse('https://tmcmaster.azurewebsites.net/assets/cards.csv',{
-    download: true,    
-    complete: (result) => {
-            console.log('Parsed: ', result);
-            this.cards = result.data;            
-        }
-    });
-}
 
   ngOnInit() {
   }
-
 }

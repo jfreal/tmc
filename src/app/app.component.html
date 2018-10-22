@@ -1,18 +1,30 @@
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
-
-
-<div class="container-fluid">
-    <div class="row" style="background-color: #E88A42;">
-        dd
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-12">
+            <button type="button" class="btn btn-light mt-2 mb-2">Light</button>
+        </div>
     </div>
+</div>
 
-    <div>
-        <h1>
-            Welcome to {{ title }}!
-        </h1>
+<div class="app-container surface-bg">
+    <div class="container white-bg">
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+
+                <h1 class="mt-2">
+                    Welcome to {{ title }}!
+                </h1>
+            </div>
+
+        </div>
+
+        <router-outlet></router-outlet>
+
     </div>
-
-    <app-card-list></app-card-list>
-
 </div>

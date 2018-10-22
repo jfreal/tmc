@@ -6,8 +6,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class CardsService {
-
-  
+  url: string;  
 
   getCard(cardNumber: string, callback: (result: any) => void): any {
     
@@ -15,7 +14,7 @@ export class CardsService {
       callback(this.cards.filter(x=>x[1] === cardNumber)[0]);  
     }
       
-    this.papa.parse('http://localhost:4200/assets/cards.csv',{
+    this.papa.parse(this.url + 'assets/cards.csv',{
       download: true,    
       complete: (result) => {
               this.cards = result.data;             
@@ -33,7 +32,7 @@ export class CardsService {
       callback(this.cards);  
     }
       
-    this.papa.parse('http://localhost:4200/assets/cards.csv',{
+    this.papa.parse(this.url + '/assets/cards.csv',{
       download: true,    
       complete: (result) => {
               this.cards = result.data;
@@ -44,6 +43,6 @@ export class CardsService {
   }  
 
   constructor(private papa: Papa) {       
-   
+    this.url = environment.production ? "https://tmcmaster.azurewebsites.net/" :"http://localhost:4200/"
   }
 }

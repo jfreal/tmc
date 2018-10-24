@@ -28,4 +28,18 @@ export class CardComponent implements OnInit {
       this.card = result;
     })
   }
+
+  isNumber(value: string | number): boolean
+  {
+    return !isNaN(Number(value.toString()));
+  }
+
+  counter(n: string): any[] {    
+
+    if(n && this.isNumber(n)){      
+      return Array.from(Array(Number(n)).keys());
+    }
+
+    return Array(0);
+  }
 }

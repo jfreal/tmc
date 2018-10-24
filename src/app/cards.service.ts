@@ -21,8 +21,7 @@ export class CardsService {
 
               callback(this.cards.filter(x=>x[1] === cardNumber)[0]);    
           }
-      });       
-
+      });
   }
 
   cards: any[];
@@ -35,9 +34,9 @@ export class CardsService {
     this.papa.parse(this.url + '/assets/cards.csv',{
       download: true,    
       complete: (result) => {
-              this.cards = result.data;
+              this.cards = result.data;            
 
-              callback(result.data);    
+              callback(this.cards);    
           }
       });       
   }  

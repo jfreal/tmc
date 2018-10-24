@@ -1,6 +1,6 @@
 .card-title {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 22px;
+    font-weight: 600
 }
 
 pre {
@@ -52,36 +52,36 @@ pre {
 }
 
 .science .fas {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .animal .fas {
-    font-size: 26px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .space .fas {
     color: #FFEC3D;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .plant .fas {
     color: #36844A;
-    font-size: 22px;
+    font-size: 14px;
 }
 
 .earth .fas {
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .energy .fas {
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .event .fas {
-    font-size: 26px;
+    font-size: 18px;
 }
 
 .jovian {
@@ -100,32 +100,32 @@ pre {
     -o-background-size: contain;
     background-size: contain;
     font-weight: 900;
-    font-size: 28px;
+    font-size: 22px;
     vertical-align: middle;
     padding-top: 0px;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #F9CD08;
 }
 
 .tag.venus {
     font-weight: 900;
-    font-size: 28px;
-    vertical-align: middle;
+    font-size: 16px;
     padding-top: 0px;
     color: #fff;
 }
 
 .tag {
     border: 2px solid #000;
-    height: 42px;
-    width: 42px;
+    height: 32px;
+    width: 32px;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     text-align: center;
-    padding-top: 6px;
+    vertical-align: middle;
     float: left;
     margin-left: 3px;
+    line-height: 28px;
 }
 
 td.type {
@@ -151,10 +151,10 @@ td.type {
 }
 
 .money {
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Titillium Web', sans-serif;
-    width: 40px;
-    min-height: 40px;
+    width: 32px;
+    min-height: 32px;
     border-radius: 3px;
     background: linear-gradient(to bottom right, #F9E100, #F18F00);
     border: 2px solid #000;

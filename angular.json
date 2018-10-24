@@ -75,10 +75,10 @@
                         ],
                         "scripts": [],
                         "assets": [
-                            "src/favicon.ico",
                             "src/assets",
                             "assets/img",
-                            "src/assets/cards.csv"
+                            "src/assets/cards.csv",
+                            "assets/favicons"
                         ]
                     }
                 },

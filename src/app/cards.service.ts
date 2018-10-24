@@ -12,6 +12,7 @@ export class CardsService {
     
     if(this.cards){
       callback(this.cards.filter(x=>x[1] === cardNumber)[0]);  
+      return;
     }
       
     this.papa.parse(this.url + 'assets/cards.csv',{
@@ -27,8 +28,10 @@ export class CardsService {
   cards: any[];
 
   getCards(callback): void {
+
     if(this.cards){
       callback(this.cards);  
+      return;
     }
       
     this.papa.parse(this.url + '/assets/cards.csv',{

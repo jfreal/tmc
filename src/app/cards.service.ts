@@ -32,8 +32,8 @@ export class CardsService {
     if(this.cards){
       callback(this.cards);  
       return;
-    }
-      
+    }      
+
     this.papa.parse(this.url + '/assets/cards.csv',{
       download: true,    
       complete: (result) => {
@@ -45,6 +45,6 @@ export class CardsService {
   }  
 
   constructor(private papa: Papa) {       
-    this.url = environment.production ? "https://tmcmaster.azurewebsites.net/" :"http://localhost:4200/"
+    this.url = environment.production ? "https://terraformingmars.cards/" :"http://localhost:4200/"
   }
 }

@@ -7,7 +7,7 @@
                 <th>Cost</th>
 
                 <th>Name</th>
-                <th></th>
+                <th>Req</th>
                 <th></th>
                 <th>Deck</th>
                 <th>Tags</th>
@@ -24,7 +24,10 @@
                 <td class="card-title">
                     <a routerLink="/card/{{card[1]}}">{{card[0]}}</a>
                 </td>
-                <td></td>
+                <td>
+                    <div *ngIf="card[5] > -30">{{card[5]}} temp</div>
+
+                </td>
                 <td></td>
                 <td>{{card[4]}}</td>
                 <td>

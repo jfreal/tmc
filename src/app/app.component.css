@@ -2,15 +2,13 @@ h1 {
     font-family: 'Titillium Web', sans-serif;
 }
 
-.app-container {
-    background-color: #fbe8da
-}
-
 .white-bg {
     background-color: #fff;
     border-radius: 3px;
 }
 
+
+/* 
 .surface-bg {
     background: #000 url(/assets/img/surfacebg2.png) no-repeat top left fixed;
-}
+} */

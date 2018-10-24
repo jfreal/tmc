@@ -1,3 +1,11 @@
+#mars-bg {
+    background: url(/assets/img/surfacebg.png) no-repeat top center fixed;
+}
+
+body {
+    background: linear-gradient(#2C2020, #390F33);
+}
+
 .card-title {
     font-family: 'Titillium Web', sans-serif;
     font-weight: 600
@@ -168,7 +176,12 @@ a {
 }
 
 #header {
-    background-color: #2C2020;
     color: #f7f7f7;
     font-size: 14px;
+}
+
+.fas.fa-thermometer-half {
+    background: -webkit-linear-gradient(#26BFF8, #D80A1E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

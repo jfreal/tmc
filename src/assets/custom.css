@@ -180,8 +180,36 @@ a {
     font-size: 14px;
 }
 
-.fas.fa-thermometer-half {
+.fas.fa-thermometer-full {
     background: -webkit-linear-gradient(#26BFF8, #D80A1E);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.hexagon {
+    position: relative;
+    width: 20px;
+    height: 11.55px;
+    background-color: #1C6AC6;
+    margin: 5.77px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 5.77px solid #1C6AC6;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 5.77px solid #1C6AC6;
 }

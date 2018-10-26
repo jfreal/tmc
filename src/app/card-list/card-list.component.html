@@ -25,8 +25,14 @@
                     <a routerLink="/card/{{card[1]}}">{{card[0]}}</a>
                 </td>
                 <td>
-                    <div *ngIf="card[5] > -30">{{card[5]}} <i class="fas fa-thermometer-half"></i></div>
-
+                    <div *ngIf="card[5] > -30">{{card[5]}} <i class="fas fa-thermometer-full"></i></div>
+                    <div *ngIf="card[6] > 0">{{card[6]}} O<sub>2</sub></div>
+                    <div *ngIf="card[7] > 0">
+                        <div style="width: 34px">
+                            {{card[7]}}
+                            <div class="hexagon float-right"></div>
+                        </div>
+                    </div>
                 </td>
                 <td></td>
                 <td>{{card[4]}}</td>

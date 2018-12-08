@@ -15,28 +15,27 @@ export class CardComponent implements OnInit {
     private cardService: CardsService,
     private route: ActivatedRoute,
     private location: Location
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.getCard();
   }
 
   getCard(): void {
-    const id = this.route.snapshot.paramMap.get('id');    
+    const cardName = this.route.snapshot.paramMap.get('cardName');
 
-    this.cardService.getCard(id, (result)=>{
+    this.cardService.getCard(cardName, (result) => {
       this.card = result;
     })
   }
 
-  isNumber(value: string | number): boolean
-  {
+  isNumber(value: string | number): boolean {
     return !isNaN(Number(value.toString()));
   }
 
-  counter(n: string): any[] {    
+  counter(n: string): any[] {
 
-    if(n && this.isNumber(n)){      
+    if (n && this.isNumber(n)) {
       return Array.from(Array(Number(n)).keys());
     }
 

@@ -1,61 +1,126 @@
 <div class="row">
-    <div class="col-12">
+  <div class="col-12">
 
-        <table class="table table-sm">
-            <thead>
-                <th></th>
-                <th>Cost</th>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Cost</th>
+          <th>Name</th>
+          <th>Req</th>
+          <th></th>
+          <th>Deck</th>
+          <th>Tags</th>
+          <th>Prod</th>
+          <th>Inv</th>
+          <th>VP</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let card of cards">
+        <td class="type">
+          <div class=type-{{card[3]}}></div>
+        </td>
+        <td>
+          <div class="mc">{{card[2]}}</div>
+        </td>
+        <td class="card-title">
+          <a routerLink="/card/{{card[0].replace(' ', '-') | urlify}}">{{card[0]}}</a>
+        </td>
+        <td>
+          <div *ngIf="card[5] > -30">≥{{card[5]}} <i class="fas fa-thermometer-full"></i></div>
+          <div *ngIf="card[6] > 0">≥{{card[6]}}% O<sub>2</sub></div>
+          <div *ngIf="card[7] > 0">
+            <div style="width: 48px">
+              ≥{{card[7]}} <div class="hexagon float-right"></div>
+            </div>
+          </div>
+          <div *ngIf="card[8] > 0">
+            <div>
+              ≥{{card[8]}} V
+            </div>
+          </div>
+          <div *ngIf="card[9] < 8">
+            ≤{{card[9]}} <i class="fas fa-thermometer-full"></i>
+          </div>
+          <div *ngIf="card[10] < 14">
+            ≤{{card[10]}}% O<sub>2</sub>
+          </div>
+          <div *ngIf="card[11] < 9">
+            <div style="width: 48px">
+              ≤{{card[7]}} <div class="hexagon float-right"></div>
+            </div>
+          </div>
+          <div *ngIf="card[12] < 30">
+            ≤{{card[12]}}% V
+          </div>
+        </td>
+        <td></td>
+        <td>{{card[4]}}</td>
+        <td>
+          <div *ngFor="let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i></div>
+          <div *ngFor="let i of counter(card[28])" class="tag building"><i class="fas fa-warehouse "></i></div>
+          <div *ngFor="let i of counter(card[29])" class="tag space"><i class="fas fa-haykal "></i></div>
+          <div *ngFor="let i of counter(card[30])" class="tag microbe"><i class="fas fa-bug "></i></div>
+          <div *ngFor="let i of counter(card[31])" class="tag plant"><i class="fas fa-leaf "></i></div>
+          <div *ngFor="let i of counter(card[32])" class="tag animal"><i class="fas fa-paw "></i></div>
+          <div *ngFor="let i of counter(card[33])" class="tag city"><i class="fas fa-city "></i> </div>
+          <div *ngFor="let i of counter(card[34])" class="tag earth"><i class="fas fa-globe-americas "></i></div>
+          <div *ngFor="let i of counter(card[35])" class="tag jovian"></div>
+          <div *ngFor="let i of counter(card[36])" class="tag energy"><i class="fas fa-bolt "></i></div>
+          <div *ngFor="let i of counter(card[37])" class="tag venus">V</div>
+          <div *ngFor="let i of counter(card[38])" class="tag event"><i class="fas fa-long-arrow-alt-down "></i></div>
+        </td>
+        <td>
+          <div *ngIf="card[40] !== '0' || card[41] !== '0' || card[42] !== '0' || card[43] !== '0' || card[44] !== '0' || card[45] !== '0'"
+            class="production-bg">
+            <div *ngIf="card[40] !== '0'" class="prod-box">
+              <div class="prod mc"><strong> {{card[40]}}</strong></div>
+            </div>
+            <div *ngIf="card[41] !== '0'" class="prod-box">
+              {{card[41]}} <div class="prod steel"><i class="fas fa-hammer"></i></div>
+            </div>
+            <div *ngIf="card[42] !== '0'" class="prod-box">
+              {{card[42]}} <div class="prod titanium"><i class="far fa-star"></i></div>
+            </div>
+            <div *ngIf="card[43] !== '0'" class="prod-box">
+              {{card[43]}} <div class="prod plant"><i class="fas fa-leaf "></i></div>
+            </div>
+            <div *ngIf="card[44] !== '0'" class="prod-box">
+              {{card[44]}} <div class="prod energy"><i class="fas fa-bolt "></i></div>
+            </div>
+            <div *ngIf="card[45] !== '0'" class="prod-box">
+              {{card[45]}} <div class="prod heat"><i class="fas fa-fire "></i></div>
+            </div>
+          </div>
+        </td>
+        <td>
 
-                <th>Name</th>
-                <th>Req</th>
-                <th></th>
-                <th>Deck</th>
-                <th>Tags</th>
-                <th>VP</th>
+          <div *ngIf="card[47] !== '0'" class="prod-box">
+            <div class="prod mc"><strong> {{card[47]}}</strong></div>
+          </div>
+          <div *ngIf="card[48] !== '0'" class="prod-box">
+            {{card[48]}} <div class="prod steel"><i class="fas fa-hammer"></i></div>
+          </div>
+          <div *ngIf="card[49] !== '0'" class="prod-box">
+            {{card[49]}} <div class="prod titanium"><i class="far fa-star"></i></div>
+          </div>
+          <div *ngIf="card[50] !== '0'" class="prod-box">
+            {{card[50]}} <div class="prod plant"><i class="fas fa-leaf "></i></div>
+          </div>
+          <div *ngIf="card[51] !== '0'" class="prod-box">
+            {{card[51]}} <div class="prod energy"><i class="fas fa-bolt "></i></div>
+          </div>
+          <div *ngIf="card[52] !== '0'" class="prod-box">
+            {{card[52]}} <div class="prod heat"><i class="fas fa-fire "></i></div>
+          </div>
 
-            </thead>
-            <tr *ngFor="let card of cards">
-                <td class="type">
-                    <div class=type-{{card[3]}}></div>
-                </td>
-                <td>
-                    <div class="money">{{card[2]}}</div>
-                </td>
-                <td class="card-title">
-                    <a routerLink="/card/{{card[1]}}">{{card[0]}}</a>
-                </td>
-                <td>
-                    <div *ngIf="card[5] > -30">{{card[5]}} <i class="fas fa-thermometer-full"></i></div>
-                    <div *ngIf="card[6] > 0">{{card[6]}} O<sub>2</sub></div>
-                    <div *ngIf="card[7] > 0">
-                        <div style="width: 34px">
-                            {{card[7]}}
-                            <div class="hexagon float-right"></div>
-                        </div>
-                    </div>
-                </td>
-                <td></td>
-                <td>{{card[4]}}</td>
-                <td>
-                    <div *ngFor="let i of counter(card[27])" class=" tag science "><i class="fas fa-atom "></i></div>
-                    <div *ngFor="let i of counter(card[28])" class="tag building "><i class="fas fa-warehouse "></i></div>
-                    <div *ngFor="let i of counter(card[29])" class="tag space "><i class="fas fa-haykal "></i></div>
-                    <div *ngFor="let i of counter(card[30])" class="tag microbe "><i class="fas fa-bug "></i></div>
-                    <div *ngFor="let i of counter(card[31])" class="tag plant "><i class="fas fa-leaf "></i></div>
-                    <div *ngFor="let i of counter(card[32])" class="tag animal "><i class="fas fa-paw "></i></div>
-                    <div *ngFor="let i of counter(card[33])" class="tag city "><i class="fas fa-city "></i> </div>
-                    <div *ngFor="let i of counter(card[34])" class="tag earth "><i class="fas fa-globe-americas "></i></div>
-                    <div *ngFor="let i of counter(card[35])" class="tag jovian "></div>
-                    <div *ngFor="let i of counter(card[36])" class="tag energy "><i class="fas fa-bolt "></i></div>
-                    <div *ngFor="let i of counter(card[37])" class="tag venus ">V</div>
-                    <div *ngFor="let i of counter(card[38])" class="tag event "><i class="fas fa-long-arrow-alt-down "></i></div>
-                </td>
-                <td>
-                    <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}</div>
+        </td>
+        <td>
+          <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}</div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 
 </div>

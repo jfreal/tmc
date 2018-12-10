@@ -15,83 +15,87 @@ h1 {
   font-weight: 600
 }
 
+.table td {
+  vertical-align: middle;
+}
+
 pre {
   counter-reset: line;
 }
 
 .building {
-  background: linear-gradient(to bottom, #AF7B4C 19px, #9C693C 20px);
+  background: linear-gradient(to bottom, #AF7B4C 50%, #9C693C 50%);
 }
 
 .steel {
-  background: linear-gradient(to bottom, #AF7B4C 19px, #9C693C 20px);
+  background: linear-gradient(to bottom, #AF7B4C 50%, #9C693C 50%);
 }
 
 .earth {
-  background: linear-gradient(to bottom, #175698 19px, #1B1B4F 20px);
+  background: linear-gradient(to bottom, #175698 50%, #1B1B4F 50%);
 }
 
 .space {
-  background: linear-gradient(to bottom, #6B6B6B 19px, #3C3C3C 20px);
+  background: linear-gradient(to bottom, #6B6B6B 50%, #3C3C3C 50%);
 }
 
 .titanium {
-  background: linear-gradient(to bottom, #6B6B6B 19px, #3C3C3C 20px);
+  background: linear-gradient(to bottom, #6B6B6B 50%, #3C3C3C 50%);
 }
 
 .heat {
-  background: linear-gradient(to bottom, #FF8542 19px, #F86728 20px);
+  background: linear-gradient(to bottom, #FF8542 50%, #F86728 50%);
 }
 
 .energy {
-  background: linear-gradient(to bottom, #A13E8E 14px, #8A2986 14px);
+  background: linear-gradient(to bottom, #A13E8E 50%, #8A2986 50%);
 }
 
 .plant {
-  background: linear-gradient(to bottom, #83C138 14px, #58B133 14px);
+  background: linear-gradient(to bottom, #83C138 50%, #58B133 50%);
 }
 
 .microbe {
-  background: linear-gradient(to bottom, #EAE845 19px, #B8CC13 20px);
+  background: linear-gradient(to bottom, #EAE845 50%, #B8CC13 50%);
 }
 
 .animal {
-  background: linear-gradient(to bottom, #839D42 19px, #48753A 20px);
+  background: linear-gradient(to bottom, #839D42 50%, #48753A 50%);
 }
 
 .science {
-  background: linear-gradient(to bottom, #F7F9F8 19px, #F2F1EF 20px);
+  background: linear-gradient(to bottom, #F7F9F8 50%, #F2F1EF 50%);
 }
 
 .event {
-  background: linear-gradient(to bottom, #FCE907 19px, #FAD606 20px);
+  background: linear-gradient(to bottom, #FCE907 50%, #FAD606 50%);
 }
 
 .city {
-  background: linear-gradient(to bottom, #CCCCCC 19px, #A6A6A6 20px);
+  background: linear-gradient(to bottom, #CCCCCC 50%, #A6A6A6 50%);
 }
 
 .venus {
-  background: linear-gradient(to bottom, #07AAE3 19px, #0E7DC4 20px);
+  background: linear-gradient(to bottom, #07AAE3 50%, #0E7DC4 50%);
 }
 
 .science .fas {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .animal .fas {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .space .fas {
   color: #FFEC3D;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .titanium .fa-star {
   color: #FFEC3D;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .plant .fas {
@@ -101,20 +105,29 @@ pre {
 
 .earth .fas {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .energy .fas {
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .event .fas {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .heat .fas {
-  color: #FEE030
+  color: #FEE030;
+  font-size: 15px;
+}
+
+.building .fas {
+  font-size: 14px;
+}
+
+.city .fas {
+  font-size: 14px;
 }
 
 .jovian {
@@ -133,7 +146,7 @@ pre {
   -o-background-size: contain;
   background-size: contain;
   font-weight: 900;
-  font-size: 22px;
+  font-size: 16px;
   vertical-align: middle;
   padding-top: 0px;
   -webkit-text-stroke-width: 1px;
@@ -142,15 +155,15 @@ pre {
 
 .tag.venus {
   font-weight: 900;
-  font-size: 16px;
+  font-size: 14px;
   padding-top: 0px;
   color: #fff;
 }
 
 .tag {
   border: 2px solid #000;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -158,12 +171,11 @@ pre {
   vertical-align: middle;
   float: left;
   margin-left: 3px;
-  line-height: 28px;
 }
 
 .prod {
-  height: 28px;
-  width: 28px;
+  height: 26px;
+  width: 26px;
   float: right;
   text-align: center;
   vertical-align: middle;
@@ -176,9 +188,9 @@ pre {
 }
 
 .prod.mc {
-  height: 28px;
-  width: 28px;
-  font-size: 16px;
+  height: 26px;
+  width: 26px;
+  font-size: 15px;
 }
 
 td.type {
@@ -188,26 +200,23 @@ td.type {
 .type-Automated {
   border-left: 4px solid #7EB61F;
   height: 100%;
-  margin: 4px 0;
 }
 
 .type-Active {
   border-left: 4px solid #2C7FC1;
   height: 100%;
-  margin: 4px 0;
 }
 
 .type-Event {
   border-left: 4px solid #F6B205;
   height: 100%;
-  margin: 4px 0;
 }
 
 .mc {
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Titillium Web', sans-serif;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 3px;
   background: linear-gradient(to bottom right, #F9E100, #F18F00);
   border: 2px solid #000;
@@ -261,8 +270,7 @@ a {
 
 .production-bg {
   background-color: #956743;
-  padding: 3px 3px;
-  height: 36px;
+  padding: 2px 2px;
   display: inline-block;
   border: 1px solid #000;
 }

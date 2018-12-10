@@ -55,7 +55,7 @@
           </div>
         </td>
         <td></td>
-        <td>{{card[4]}}</td>
+        <td title="{{card[4]}}">{{card[4] | slice:0:1}}</td>
         <td>
           <div *ngFor="let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i></div>
           <div *ngFor="let i of counter(card[28])" class="tag building"><i class="fas fa-warehouse "></i></div>

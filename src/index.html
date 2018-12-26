@@ -18,12 +18,31 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131336547-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-131336547-1');
+
+  </script>
+
 </head>
 
 <body>
   <div id="mars-bg">
     <app-root></app-root>
   </div>
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+  </footer>
 </body>
 
 </html>

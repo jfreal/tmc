@@ -6,13 +6,17 @@ import { PapaParseModule } from 'ngx-papaparse';
 import { CardComponent } from './card/card.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { UrlifyPipe } from './urlify.pipe';
+import { ProductionBoxComponent } from './production-box/production-box.component';
+import { QuantityDisplayComponent } from './quantity-display/quantity-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardListComponent,
     CardComponent,
-    UrlifyPipe
+    UrlifyPipe,
+    ProductionBoxComponent,
+    QuantityDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { UrlifyPipe } from './urlify.pipe';
 import { ProductionBoxComponent } from './production-box/production-box.component';
 import { QuantityDisplayComponent } from './quantity-display/quantity-display.component';
+import { DisqusModule } from 'ngx-disqus';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { QuantityDisplayComponent } from './quantity-display/quantity-display.co
   imports: [
     BrowserModule,
     PapaParseModule,
-    AppRoutingModule    
+    AppRoutingModule,
+    DisqusModule.forRoot('terraformingmarscards')
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<div *ngIf="card[40] !== '0' || card[41] !== '0' || card[42] !== '0' || card[43] !== '0' || card[44] !== '0' || card[45] !== '0'"
+<div *ngIf="card[1] !== '86' && (card[40] !== '0' || card[41] !== '0' || card[42] !== '0' || card[43] !== '0' || card[44] !== '0' || card[45] !== '0')"
   class="production-bg">
   <div *ngIf="card[40] !== '0'" class="prod-box">
     <div class="prod mc"><strong>
@@ -25,4 +25,7 @@
     <app-quantity-display [card]="card" [quantity]="card[45]"></app-quantity-display>
     <div class="prod heat"><i class="fas fa-fire "></i></div>
   </div>
+</div>
+<div *ngIf="card[1] === '86'" class="production-bg">
+  COPY
 </div>

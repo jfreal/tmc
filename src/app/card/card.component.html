@@ -37,9 +37,27 @@
 
 
       </div>
+      <p>
+        Great card for the early game.
+      </p>
+      <disqus [identifier]="cardNameParam"></disqus>
     </div>
-    <div class="col-4">
 
+    <div class="col-4">
+      <table class="table">
+        <tr>
+          <td><strong>Card Number:</strong></td>
+          <td>{{card[1]}}</td>
+        </tr>
+        <tr>
+          <td><strong>Card Type:</strong></td>
+          <td>{{card[3]}}</td>
+        </tr>
+        <tr>
+          <td><strong>Card Deck:</strong></td>
+          <td>{{card[4]}}</td>
+        </tr>
+      </table>
     </div>
   </div>
   <div class="row">

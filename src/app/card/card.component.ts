@@ -10,6 +10,7 @@ import { CardsService } from '../cards.service';
 })
 export class CardComponent implements OnInit {
   card: any;
+  cardNameParam: string;
 
   constructor(
     private cardService: CardsService,
@@ -22,9 +23,9 @@ export class CardComponent implements OnInit {
   }
 
   getCard(): void {
-    const cardName = this.route.snapshot.paramMap.get('cardName');
+    this.cardNameParam = this.route.snapshot.paramMap.get('cardName');
 
-    this.cardService.getCard(cardName, (result) => {
+    this.cardService.getCard(this.cardNameParam, (result) => {
       this.card = result;
     })
   }

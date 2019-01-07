@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Papa } from 'ngx-papaparse';
 import { environment } from '../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { UrlHandlingStrategy } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,44 +12,34 @@ import { environment } from '../environments/environment';
 export class CardsService {
   url: string;
 
-  getCard(cardName: string, callback: (result: any) => void): any {
+  private getCardData(): Observable<any[]> {
 
-    if (this.cards) {
-      callback(this.cards.filter(x => x[0].toLocaleLowerCase().replace(/ /g, '-') === cardName)[0]);
-      return;
-    }
+    return this.http.get(this.url + 'assets/cards.csv', { responseType: 'text' }).pipe(map(response => {
+      var parsed = this.papa.parse(response);
 
-    this.papa.parse(this.url + 'assets/cards.csv', {
-      download: true,
-      complete: (result) => {
-        this.cards = result.data;
+      var filteredCards = parsed.data.filter(x => x[0] !== 'Card Name');
+      filteredCards = filteredCards.filter(x => x[0] !== 'Card Identifiers');
 
-        callback(this.cards.filter(x => x[0].toLocaleLowerCase().replace(/ /g, '-') === cardName)[0]);
-      }
-    });
+      return filteredCards;
+    }));
+  }
+
+  getCard(cardName: string): any {
+    return this.getCardData().pipe(map(response => {
+      return response.filter(x => x[0].toLocaleLowerCase().replace(/ /g, '-') === cardName)[0];
+    }))
   }
 
   cards: any[];
 
-  getCards(callback): void {
+  getCards(): any {
 
-    if (this.cards) {
-      callback(this.cards);
-      return;
-    }
+    var cardData = this.getCardData();
 
-    this.papa.parse(this.url + '/assets/cards.csv', {
-      download: true,
-      complete: (result) => {
-        this.cards = result.data.filter(x => x[0] !== 'Card Name');
-        this.cards = this.cards.filter(x => x[0] !== 'Card Identifiers');
-
-        callback(this.cards);
-      }
-    });
+    return cardData;
   }
 
-  constructor(private papa: Papa) {
+  constructor(private papa: Papa, private http: HttpClient) {
     this.url = environment.production ? "https://terraformingmars.cards/" : "http://localhost:4200/"
   }
 }

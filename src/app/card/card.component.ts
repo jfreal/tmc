@@ -25,9 +25,9 @@ export class CardComponent implements OnInit {
   getCard(): void {
     this.cardNameParam = this.route.snapshot.paramMap.get('cardName');
 
-    this.cardService.getCard(this.cardNameParam, (result) => {
-      this.card = result;
-    })
+    this.cardService.getCard(this.cardNameParam).subscribe(r => {
+      this.card = r;
+    });
   }
 
   isNumber(value: string | number): boolean {

@@ -9,6 +9,7 @@ import { UrlifyPipe } from './urlify.pipe';
 import { ProductionBoxComponent } from './production-box/production-box.component';
 import { QuantityDisplayComponent } from './quantity-display/quantity-display.component';
 import { DisqusModule } from 'ngx-disqus';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DisqusModule } from 'ngx-disqus';
     BrowserModule,
     PapaParseModule,
     AppRoutingModule,
+    HttpClientModule,
     DisqusModule.forRoot('terraformingmarscards')
   ],
   providers: [],

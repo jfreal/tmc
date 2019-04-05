@@ -17,8 +17,10 @@ export class CardsService {
     return this.http.get(this.url + 'assets/cards.csv', { responseType: 'text' }).pipe(map(response => {
       var parsed = this.papa.parse(response);
 
+      //removing header rows and actual card types we don't have a great UI for
       var filteredCards = parsed.data.filter(x => x[0] !== 'Card Name');
       filteredCards = filteredCards.filter(x => x[0] !== 'Card Identifiers');
+      filteredCards = filteredCards.filter(x => ['Active', 'Event', 'Automated'].includes(x[3]));
 
       return filteredCards;
     }));

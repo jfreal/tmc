@@ -173,6 +173,10 @@ pre {
   margin-left: 3px;
 }
 
+a .tag {
+  color: #000
+}
+
 .prod {
   height: 26px;
   width: 26px;
@@ -274,4 +278,8 @@ a {
   display: inline-block;
   border: 1px solid #000;
   font-weight: bold;
+}
+
+a {
+  cursor: pointer;
 }

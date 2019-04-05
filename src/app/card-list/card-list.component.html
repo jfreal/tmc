@@ -1,7 +1,13 @@
 <div class="row">
   <div class="col-12">
 
-    <table class="table table-sm">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-light">Left</button>
+      <button type="button" class="btn btn-light active">Middle</button>
+      <button type="button" class="btn btn-light">Right</button>
+    </div>
+
+    <table class="table table-sm mt-4">
       <thead>
         <tr>
           <th></th>
@@ -57,18 +63,43 @@
         <td></td>
         <td title="{{card[4]}}">{{card[4] | slice:0:4}}</td>
         <td>
-          <div *ngFor="let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i></div>
-          <div *ngFor="let i of counter(card[28])" class="tag building"><i class="fas fa-warehouse "></i></div>
-          <div *ngFor="let i of counter(card[29])" class="tag space"><i class="fas fa-haykal "></i></div>
-          <div *ngFor="let i of counter(card[30])" class="tag microbe"><i class="fas fa-bug "></i></div>
-          <div *ngFor="let i of counter(card[31])" class="tag plant"><i class="fas fa-leaf "></i></div>
-          <div *ngFor="let i of counter(card[32])" class="tag animal"><i class="fas fa-paw "></i></div>
-          <div *ngFor="let i of counter(card[33])" class="tag city"><i class="fas fa-city "></i> </div>
-          <div *ngFor="let i of counter(card[34])" class="tag earth"><i class="fas fa-globe-americas "></i></div>
-          <div *ngFor="let i of counter(card[35])" class="tag jovian"></div>
-          <div *ngFor="let i of counter(card[36])" class="tag energy"><i class="fas fa-bolt "></i></div>
-          <div *ngFor="let i of counter(card[37])" class="tag venus">V</div>
-          <div *ngFor="let i of counter(card[38])" class="tag event"><i class="fas fa-long-arrow-alt-down "></i></div>
+          <a (click)="onTagClick('science')">
+            <div *ngFor=" let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i>
+            </div>
+          </a>
+          <a (click)="onTagClick('building')">
+            <div *ngFor="let i of counter(card[28])" class="tag building"><i class="fas fa-warehouse "></i></div>
+          </a>
+          <a (click)="onTagClick('space')">
+            <div *ngFor="let i of counter(card[29])" class="tag space"><i class="fas fa-haykal "></i></div>
+          </a>
+          <a (click)="onTagClick('microbe')">
+            <div *ngFor="let i of counter(card[30])" class="tag microbe"><i class="fas fa-bug "></i></div>
+          </a>
+          <a (click)="onTagClick('plant')">
+            <div *ngFor="let i of counter(card[31])" class="tag plant"><i class="fas fa-leaf "></i></div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[32])" class="tag animal"><i class="fas fa-paw "></i></div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[33])" class="tag city"><i class="fas fa-city "></i> </div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[34])" class="tag earth"><i class="fas fa-globe-americas "></i></div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[35])" class="tag jovian"></div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[36])" class="tag energy"><i class="fas fa-bolt "></i></div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[37])" class="tag venus">V</div>
+          </a>
+          <a (click)="onTagClick('science')">
+            <div *ngFor="let i of counter(card[38])" class="tag event"><i class="fas fa-long-arrow-alt-down "></i></div>
+          </a>
         </td>
         <td>
           <app-production-box [card]="card"></app-production-box>

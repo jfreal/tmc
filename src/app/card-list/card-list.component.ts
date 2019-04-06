@@ -59,10 +59,12 @@ export class CardListComponent implements OnInit {
   onTagClick(tag) {
 
     if (this.tags.includes(tag)) {
-      return;
+      let index = this.tags.indexOf(tag);
+      console.log(index);
+      this.tags.splice(index, 1);
+    } else {
+      this.tags.push(tag);
     }
-
-    this.tags.push(tag);
 
     this.router.navigate(['/'], { queryParams: { tags: this.tags.join(',') } });
   }

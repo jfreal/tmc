@@ -1,3 +1,8 @@
+//easy hack to fix some bugs with the stars
+.position-fixed {
+  position: fixed;
+}
+
 #stars {
   width: 1px;
   height: 1px;
@@ -44,6 +49,7 @@
 
 #stars3:after {
   content: " ";
+  overflow: hidden;
   position: absolute;
   top: 2000px;
   width: 3px;
@@ -53,16 +59,16 @@
 }
 
 html {
-  position: fixed;
   height: 100%;
   width: 100%;
   font-family: "lato", sans-serif;
   color: #FFF;
   background: radial-gradient(ellipse at bottom, #130c16 0%, #0f090d 100%);
+
 }
 
 #horizon {
-  position: absolute;
+  position: fixed;
   width: 160%;
   height: 70%;
   border-radius: 100%/100%;
@@ -103,13 +109,13 @@ html {
   height: 100%;
   border-radius: 100%/100%;
   background: #882196;
-  -webkit-filter: blur(200px);
+  -webkit-filter: blur(30px);
   opacity: 0.7;
   top: -10%;
 }
 
 #earth {
-  position: absolute;
+  position: fixed;
   width: 200%;
   height: 100%;
   background: url('/assets/img/surfacebg2.png');
@@ -127,57 +133,6 @@ html {
   border-radius: 100%/100%;
   box-shadow: inset 0px 0px 62px 140px rgba(100, 46, 11, 0.85);
 }
-
-
-// #title {
-//   position: absolute;
-//   font-weight: 300;
-//   top: 36%;
-//   left: 0;
-//   right: 0;
-//   margin-top: -80px;
-//   font-size: 130px;
-//   text-align: center;
-//   letter-spacing: 20px;
-//   padding-left: 20px;
-//   background: -webkit-linear-gradient(white, #dbdde0, #38495a);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   animation-duration: 6s;
-//   animation-iteration-count: infinite;
-//   animation-timing-function: ease;
-//   animation-name: animGravity;
-// }
-
-// #subtitle {
-//   position: absolute;
-//   font-weight: 300;
-//   top: 70%;
-//   left: 0;
-//   right: 0;
-//   font-size: 25px;
-//   text-align: center;
-//   letter-spacing: 6px;
-// }
-
-// #subtitle span {
-//   color: #d8d8d8;
-//   animation-duration: 6s;
-//   animation-iteration-count: infinite;
-//   animation-timing-function: ease;
-// }
-
-// #subtitle span:nth-child(1) {
-//   animation-name: animDont;
-// }
-
-// #subtitle span:nth-child(2) {
-//   animation-name: animLet;
-// }
-
-// #subtitle span:nth-child(3) {
-//   animation-name: animGo;
-// }
 
 @keyframes animStar {
   from {
@@ -281,13 +236,17 @@ body {
 }
 
 h1 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .card-title {
-  font-family: 'Titillium Web', sans-serif;
-  font-weight: 600
+
+  a {
+    color: #333;
+  }
 }
+
+
 
 .table td {
   vertical-align: middle;
@@ -444,7 +403,14 @@ pre {
   text-align: center;
   vertical-align: middle;
   float: left;
+}
+
+.tags-column .tag {
   margin-left: 3px;
+}
+
+.tag-buttons button {
+  padding: 3px 3px;
 }
 
 a .tag {

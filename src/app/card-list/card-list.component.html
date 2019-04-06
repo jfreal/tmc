@@ -1,10 +1,55 @@
 <div class="row">
   <div class="col-12">
 
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-light">Left</button>
-      <button type="button" class="btn btn-light active">Middle</button>
-      <button type="button" class="btn btn-light">Right</button>
+    <div class="btn-group tag-buttons" role="group" aria-label="Basic example">
+      <button (click)="onTagClick('science')" type="button" [ngClass]="{'active': tags.includes('science')}"
+        class="btn btn-light active">
+        <div class="tag science"><i class="fas fa-atom "></i></div>
+      </button>
+      <button (click)="onTagClick('building')" type="button" [ngClass]="{'active': tags.includes('building')}"
+        class="btn btn-light active">
+        <div class="tag building"><i class="fas fa-warehouse "></i></div>
+      </button>
+      <button (click)="onTagClick('space')" type="button" [ngClass]="{'active': tags.includes('space')}"
+        class="btn btn-light active">
+        <div class="tag space"><i class="fas fa-haykal "></i></div>
+      </button>
+      <button (click)="onTagClick('microbe')" type="button" [ngClass]="{'active': tags.includes('microbe')}"
+        class="btn btn-light active">
+        <div class="tag microbe"><i class="fas fa-bug "></i></div>
+      </button>
+      <button (click)="onTagClick('plant')" type="button" [ngClass]="{'active': tags.includes('plant')}"
+        class="btn btn-light active">
+        <div class="tag plant"><i class="fas fa-leaf "></i></div>
+      </button>
+      <button (click)="onTagClick('animal')" type="button" [ngClass]="{'active': tags.includes('animal')}"
+        class="btn btn-light active">
+        <div class="tag animal"><i class="fas fa-paw"></i></div>
+      </button>
+      <button (click)="onTagClick('city')" type="button" [ngClass]="{'active': tags.includes('city')}"
+        class="btn btn-light active">
+        <div class="tag city"><i class="fas fa-city "></i></div>
+      </button>
+      <button (click)="onTagClick('earth')" type="button" [ngClass]="{'active': tags.includes('earth')}"
+        class="btn btn-light active">
+        <div class="tag earth"><i class="fas fa-globe-americas"></i></div>
+      </button>
+      <button (click)="onTagClick('jovian')" type="button" [ngClass]="{'active': tags.includes('jovian')}"
+        class="btn btn-light active">
+        <div class="tag jovian"></div>
+      </button>
+      <button (click)="onTagClick('energy')" type="button" [ngClass]="{'active': tags.includes('energy')}"
+        class="btn btn-light active">
+        <div class="tag energy"><i class="fas fa-bolt"></i></div>
+      </button>
+      <button (click)="onTagClick('venus')" type="button" [ngClass]="{'active': tags.includes('venus')}"
+        class="btn btn-light active">
+        <div class="tag venus">V</div>
+      </button>
+      <button (click)="onTagClick('event')" type="button" [ngClass]="{'active': tags.includes('event')}"
+        class="btn btn-light active">
+        <div class="tag event"><i class="fas fa-long-arrow-alt-down"></i></div>
+      </button>
     </div>
 
     <table class="table table-sm mt-4">
@@ -61,8 +106,8 @@
           </div>
         </td>
         <td></td>
-        <td title="{{card[4]}}">{{card[4] | slice:0:4}}</td>
-        <td>
+        <td title="{{card[4]}}">{{card[4]}}</td>
+        <td class="tags-column">
           <a (click)="onTagClick('science')">
             <div *ngFor=" let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i>
             </div>
@@ -105,7 +150,6 @@
           <app-production-box [card]="card"></app-production-box>
         </td>
         <td>
-
           <div *ngIf="card[47] !== '0'" class="prod-box">
             <div class="prod mc">
               <strong>
@@ -136,11 +180,10 @@
 
         </td>
         <td>
-          <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}</div>
-
+          <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}
+          </div>
         </td>
       </tr>
     </table>
   </div>
-
 </div>

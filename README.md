@@ -1,41 +1,31 @@
-# TerraformingMars.cards
+# Terraforming Mars Cards
+
+Website: [terraformingmars.cards](terraformingmars.cards)
 
 This project was started after heading to an Angular Mix in September 2018 in order to solidify what I learned and get some angular experience from a real application.
 
-Terraforming Mars is a amazing board game that revolves around playing cards.  After I found a handy spreadsheet of all the card types I decided to try and make a simple UI to search and filter the list of available cards.
+Terraforming Mars by FryxGamesis a amazing board game that revolves around playing cards.  
 
-The initial version of the project was deployed via a docker container to windows Azure.  Currently it is hosted on Netlify for free.  Netlify handles all the continuous deployment and build processes really well.  
+My game group has played this game over fifty times by now and we love it.
 
-Mars parralax background was inspired and improved on from https://codepen.io/saransh/pen/EGqjo.
+After I found a handy spreadsheet of all the card types I decided to try and make a simple UI to search and filter the list of available cards.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+![alt text](https://github.com/jfreal/tmc/blob/master/readme.png?raw=true)
+
+## Technical Notes
+
+ - The initial version of the project was deployed via a docker container to windows Azure.  Currently it is hosted on Netlify for free.   
+ 
+ - Mars parralax background was inspired and improved on from https://codepen.io/saransh/pen/EGqjo.
+
+ - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
 ## Data Source
 
 The data comes from a [excel file on board game geek](https://boardgamegeek.com/filepage/157042/terraforming-mars-cards-list)  created by [CH0AM](https://boardgamegeek.com/user/CH0AM).  This project would not be possible without the efforts of CH0AM and the BGG community.
 
-## Development server
+The file was used with permission by FryxGames
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Future
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-https://boardgamegeek.com/filepage/157042/terraforming-mars-cards-list
+I don't have a lot of time to work on this project so I don't know what feature I'll be adding.  If you find any bugs please let me know.

@@ -12,8 +12,8 @@
 
       <!-- This code could have probably been another component but it was too easy to type this code out -->
 
-      <div class="btn-group tag-buttons" role="group">
-        <button class="btn btn-light" disabled>Filter by Tag</button>
+      <div class="btn-group tag-buttons flex-wrap-reverse mt-2 mt-sm-0" role="group">
+        <button class="btn btn-light d-none d-sm-block" disabled>Filter by Tag</button>
         <button (click)="onTagClick('science')" type="button" [ngClass]="{'active': tags.includes('science')}"
           class="btn btn-light active">
           <div class="tag science"><i class="fas fa-atom "></i></div>
@@ -77,13 +77,13 @@
             <th></th>
             <th>Cost</th>
             <th>Name</th>
-            <th>Req</th>
+            <th class="d-none d-sm-table-cell">Req</th>
             <th></th>
-            <th>Deck</th>
+            <th class="d-none d-sm-table-cell">Deck</th>
             <th>Tags</th>
             <th>Prod</th>
-            <th>Inv</th>
-            <th>VP</th>
+            <th class="d-none d-sm-table-cell">Inv</th>
+            <th class="d-none d-sm-table-cell">VP</th>
           </tr>
         </thead>
         <tr *ngFor="let card of cards">
@@ -96,7 +96,7 @@
           <td class="card-title">
             <a routerLink="/card/{{card[0].replace(' ', '-') | urlify}}">{{card[0]}}</a>
           </td>
-          <td>
+          <td class="d-none d-sm-table-cell">
             <div *ngIf="card[5] > -30">≥{{card[5]}} <i class="fas fa-thermometer-full"></i></div>
             <div *ngIf="card[6] > 0">≥{{card[6]}}% O<sub>2</sub></div>
             <div *ngIf="card[7] > 0">
@@ -125,7 +125,7 @@
             </div>
           </td>
           <td></td>
-          <td title="{{card[4]}}">{{card[4]}}</td>
+          <td class="d-none d-sm-table-cell" title="{{card[4]}}">{{card[4]}}</td>
           <td class="tags-column">
             <a (click)="onTagClick('science')">
               <div *ngFor=" let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i>
@@ -169,7 +169,7 @@
           <td>
             <app-production-box [card]="card"></app-production-box>
           </td>
-          <td>
+          <td class="d-none d-sm-table-cell">
             <div *ngIf="card[47] !== '0'" class="prod-box">
               <div class="prod mc">
                 <strong>
@@ -198,7 +198,7 @@
               <div class="prod heat"><i class="fas fa-fire "></i></div>
             </div>
           </td>
-          <td>
+          <td class="d-none d-sm-table-cell">
             <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}
             </div>
           </td>

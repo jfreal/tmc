@@ -1,6 +1,6 @@
 # Terraforming Mars Cards
 
-Website: [https://terraformingmars.cards](terraformingmars.cards)
+Website: [https://terraformingmars.cards](https://terraformingmars.cards)
 
 ### The Board Game
 

@@ -1,14 +1,14 @@
 # Terraforming Mars Cards
 
-Website: [terraformingmars.cards](terraformingmars.cards)
+Website: [https://terraformingmars.cards](terraformingmars.cards)
 
 ### The Board Game
 
-Terraforming Mars by FryxGames is an amazing board game that is highly dependant on deploying different cards to help your coporation terraform the martian landscape.
+Terraforming Mars by FryxGames is an amazing board game that is highly dependant on deploying different cards to help your corporation terraform the martian landscape.
 
-My board game group has played this game over fifty times and we love it.
+My board game group loves this game. We've played this game over fifty times.
 
-Since there are over 250 cards it is really tough to know or learn them all so it is useful to have a repository of cards you can browse.
+Since there are over 250 cards, it is tough to learn them all so it is useful to have a repository of cards you can browse.
 
 ![alt text](https://github.com/jfreal/tmc/blob/master/readme.png?raw=true)
 
@@ -28,7 +28,7 @@ My goals were to:
 
 ## Technical Notes
 
- - The initial version of the project was deployed via a docker container to windows Azure.  Currently it is hosted on Netlify for free.   
+ - The initial version of the project was deployed via a docker container to Microsoft Azure.  The application is hosted on Netlify for free.   
  
  - Mars parallax background was inspired and improved on from https://codepen.io/saransh/pen/EGqjo.
 

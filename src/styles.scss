@@ -130,7 +130,7 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 100%/100%;
-  box-shadow: inset 0px 0px 62px 140px rgba(100, 46, 11, 0.85);
+  box-shadow: inset 0px 0px 62px 160px rgba(100, 46, 11, 0.85);
 }
 
 @keyframes animStar {
@@ -434,12 +434,16 @@ a .tag {
   float: right;
   text-align: center;
   vertical-align: middle;
-  margin-left: 3px;
   border: 2px solid #000;
+}
+
+.production-bg>:last-child {
+  margin-right: 0px;
 }
 
 .prod-box {
   float: left;
+  margin-right: 4px;
 }
 
 .prod.mc {
@@ -533,4 +537,8 @@ a {
 
 a {
   cursor: pointer;
+}
+
+.hexagon-container {
+  width: 48px
 }

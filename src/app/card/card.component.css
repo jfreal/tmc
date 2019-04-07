@@ -7,3 +7,7 @@ h1 {
 .tag {
   margin-left: 3px;
 }
+
+.mc {
+  float: left;
+}

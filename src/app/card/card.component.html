@@ -4,8 +4,7 @@
       ← <a routerLink="/">Back to Card List</a>
     </div>
   </div>
-
-  <div class="row">
+  <div class="row mt-2">
     <div class="col-8">
       <div style="background-color: #e6e6e6; border-radius: 20px; padding: 10px;">
         <div class="row">
@@ -26,22 +25,22 @@
               <div *ngFor="let i of counter(card[35]) " class="tag jovian "></div>
               <div *ngFor="let i of counter(card[36]) " class="tag energy "><i class="fas fa-bolt "></i></div>
               <div *ngFor="let i of counter(card[37]) " class="tag venus ">V</div>
-              <div *ngFor="let i of counter(card[38]) " class="tag event "><i class="fas fa-long-arrow-alt-down "></i></div>
+              <div *ngFor="let i of counter(card[38]) " class="tag event "><i class="fas fa-long-arrow-alt-down "></i>
+              </div>
             </div>
           </div>
         </div>
         <p>{{card[68]}}</p>
         <p>{{card[69]}}</p>
-
         <app-production-box [card]="card"></app-production-box>
-
-
       </div>
       <h2 class="mt-4">Our Thoughts</h2>
       <p>
-        Great card for the early game.
+        ...
       </p>
-      <disqus [identifier]="cardNameParam"></disqus>
+      <div class="mt-4 mb-4">
+        <disqus [identifier]="cardNameParam"></disqus>
+      </div>
     </div>
 
     <div class="col-4">

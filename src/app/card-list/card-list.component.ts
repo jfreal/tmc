@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CardsService } from '../cards.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-card-list',
@@ -15,7 +17,7 @@ export class CardListComponent implements OnInit {
     this.tags = [];
   }
 
-  filterCards() {
+  filterCardsByTags() {
 
     this.cardsService.getCards().subscribe(data => {
       let cards = data;
@@ -78,7 +80,21 @@ export class CardListComponent implements OnInit {
           this.tags = params.tags.split(',');
         }
 
-        this.filterCards()
+        this.filterCardsByTags()
       });
+
+    const typeahead = fromEvent(document.getElementById('cardNameSearchInput') as HTMLTextAreaElement, 'input').pipe(
+      map((e: KeyboardEvent) => e.target.value),
+      filter(text => text.length > 2 || text === ''),
+      debounceTime(50)
+    );
+
+    typeahead.subscribe(searchValue => {
+      // Handle the data from the API
+      this.cardsService.getCards().subscribe(data => {
+        this.cards = data.filter(card => card[0].toLowerCase().includes(searchValue.toLowerCase()))
+        console.log(searchValue)
+      });
+    });
   };
 }

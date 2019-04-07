@@ -4,7 +4,10 @@ import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UrlHandlingStrategy } from '@angular/router';
+
+// I regret not casting cards to a static type
+// a lot of code references card data by index which
+// is a pain if you don't have the indexes memorized
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +38,6 @@ export class CardsService {
   cards: any[];
 
   getCards(): any {
-
     var cardData = this.getCardData();
 
     return cardData;

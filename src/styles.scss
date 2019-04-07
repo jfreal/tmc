@@ -237,16 +237,27 @@ body {
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-}
-
-.card-title {
 
   a {
-    color: #333;
+    color: #fff;
+  }
+
+  a:hover {
+    color: #ccc;
   }
 }
 
+.white-bg {
+  background-color: #fff;
+  border-radius: 3px;
+  z-index: 900;
+  position: relative;
+}
 
+
+.card-title a {
+  color: #333;
+}
 
 .table td {
   vertical-align: middle;

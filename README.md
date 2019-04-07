@@ -4,11 +4,11 @@ Website: [terraformingmars.cards](terraformingmars.cards)
 
 ### The Board Game
 
-Terraforming Mars by FryxGames is a amazing board game that is highly dependant on utilizing different cards in the game.
+Terraforming Mars by FryxGames is an amazing board game that is highly dependant on deploying different cards to help your coporation terraform the martian landscape.
 
-My game group has played this game over fifty times by now and we love it.
+My board game group has played this game over fifty times and we love it.
 
-Since there are over 250 cards it is really tough to know or learn them all so it is useful to have a repository you can browse. 
+Since there are over 250 cards it is really tough to know or learn them all so it is useful to have a repository of cards you can browse.
 
 ![alt text](https://github.com/jfreal/tmc/blob/master/readme.png?raw=true)
 
@@ -30,21 +30,23 @@ My goals were to:
 
  - The initial version of the project was deployed via a docker container to windows Azure.  Currently it is hosted on Netlify for free.   
  
- - Mars parralax background was inspired and improved on from https://codepen.io/saransh/pen/EGqjo.
+ - Mars parallax background was inspired and improved on from https://codepen.io/saransh/pen/EGqjo.
 
  - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+
+ - Browser compatibility wasn't my primary goal, but the website should work in Chrome and Firefox.
 
 ## Data Source
 
 The data comes from a [excel file on board game geek](https://boardgamegeek.com/filepage/157042/terraforming-mars-cards-list)  created by [CH0AM](https://boardgamegeek.com/user/CH0AM).  This project would not be possible without the efforts of CH0AM and the BGG community.
 
-The file and card data was used with permission by FryxGames.  
+The spreadsheet data and card text is used with permission by FryxGames.  
 
 ## Future
 
-I don't have a lot of time to work on this project so I don't know what feature I'll be adding.  If you find any bugs please let me know.
+I don't have a lot of time to work on this project so I don't how much effort I'll put into it.  If you find any bugs please let me know and I'll try and get them fixed.
 
 If I had to guess at some new features I'd like to try I'd:
 
- - [] Add some commentary on each card and how I think it should be played to help inspired discussion.
- - [] Allow more searching and filtering on things like cost or points.
+ - [ ] Add some commentary on each card and how I think it should be played to help inspired discussion.
+ - [ ] Allow more searching and filtering on things like cost or points.

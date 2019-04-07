@@ -84,7 +84,7 @@ export class CardListComponent implements OnInit {
       });
 
     const typeahead = fromEvent(document.getElementById('cardNameSearchInput') as HTMLTextAreaElement, 'input').pipe(
-      map((e: KeyboardEvent) => e.target.value),
+      map((e: KeyboardEvent) => (<HTMLInputElement>e.target).value),
       filter(text => text.length > 2 || text === ''),
       debounceTime(50)
     );

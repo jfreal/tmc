@@ -4,7 +4,7 @@ Website: [https://terraformingmars.cards](https://terraformingmars.cards)
 
 ### The Board Game
 
-Terraforming Mars by FryxGames is an amazing board game that is highly dependant on deploying different cards to help your corporation terraform the martian landscape.
+Terraforming Mars by FryxGames is an amazing board game that is highly dependent on deploying different cards to help your corporation terraform the martian landscape.
 
 My board game group loves this game. We've played this game over fifty times.
 

@@ -64,7 +64,6 @@ html {
   font-family: "lato", sans-serif;
   color: #FFF;
   background: radial-gradient(ellipse at bottom, #130c16 0%, #0f090d 100%);
-
 }
 
 #horizon {
@@ -252,6 +251,7 @@ h1 {
   border-radius: 3px;
   z-index: 900;
   position: relative;
+  min-height: 500px;
 }
 
 

@@ -68,7 +68,11 @@ export class CardListComponent implements OnInit {
       this.tags.push(tag);
     }
 
-    this.router.navigate(['/'], { queryParams: { tags: this.tags.join(',') } });
+    if (this.tags.length > 0) {
+      this.router.navigate(['/'], { queryParams: { tags: this.tags.join(',') } });
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
   ngOnInit() {

@@ -343,8 +343,8 @@ pre {
 }
 
 .plant .fas {
-  color: #36844A;
-  font-size: 14px;
+  color: rgb(45, 110, 61);
+  font-size: 15px;
 }
 
 .earth .fas {
@@ -533,6 +533,8 @@ a {
   display: inline-block;
   border: 1px solid #000;
   font-weight: bold;
+  margin-top: -2px;
+  margin-bottom: -8px;
 }
 
 a {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CardsService } from '../cards.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-card',
@@ -15,7 +16,7 @@ export class CardComponent implements OnInit {
   constructor(
     private cardService: CardsService,
     private route: ActivatedRoute,
-    private location: Location
+    private titleService: Title
   ) { }
 
   ngOnInit() {
@@ -27,6 +28,7 @@ export class CardComponent implements OnInit {
 
     this.cardService.getCard(this.cardNameParam).subscribe(r => {
       this.card = r;
+      this.titleService.setTitle(this.card[0]);
     });
   }
 

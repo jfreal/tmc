@@ -3,6 +3,8 @@ import { CardsService } from '../cards.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-card-list',
@@ -13,7 +15,7 @@ export class CardListComponent implements OnInit {
   cards: any[];
   tags: string[];
 
-  constructor(private cardsService: CardsService, private route: ActivatedRoute, private router: Router) {
+  constructor(private cardsService: CardsService, private route: ActivatedRoute, private router: Router, private titleService: Title) {
     this.tags = [];
   }
 
@@ -76,6 +78,8 @@ export class CardListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.titleService.setTitle('Terraforming Mars Cards')
 
     this.route.queryParams
       .subscribe(params => {

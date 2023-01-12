@@ -24,7 +24,7 @@
     "core-js": "^2.6.11",
     "json-schema-traverse": "^0.4.1",
     "ngx-disqus": "^2.4.3",
-    "ngx-papaparse": "^3.0.4",
+    "ngx-papaparse": "^6.0.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "^0.8.29"

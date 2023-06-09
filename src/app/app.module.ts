@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { UrlifyPipe } from './urlify.pipe';
-import { Papa } from 'ngx-papaparse';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardComponent } from './card/card.component';
 import { ProductionBoxComponent } from './production-box/production-box.component';
 import { QuantityDisplayComponent } from './quantity-display/quantity-display.component';
-import { DisqusModule } from 'ngx-disqus';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     UrlifyPipe,
     ProductionBoxComponent,
-    QuantityDisplayComponent
+    QuantityDisplayComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   providers: [],
   bootstrap: [AppComponent]

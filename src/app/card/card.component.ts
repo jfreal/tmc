@@ -12,6 +12,7 @@ import { Title } from '@angular/platform-browser';
 export class CardComponent implements OnInit {
   card: any;
   cardNameParam: string;
+  contentPath: string;
 
   constructor(
     private cardService: CardsService,
@@ -19,6 +20,7 @@ export class CardComponent implements OnInit {
     private titleService: Title
   ) {
     this.cardNameParam = '';
+    this.contentPath = '';
   }
 
   ngOnInit() {
@@ -32,7 +34,9 @@ export class CardComponent implements OnInit {
 
     card.subscribe(r => {
       this.card = r;
-      this.titleService.setTitle(this.card[0]);
+      this.titleService.setTitle(r.cardName);
+      this.contentPath = `./assets/content/${r.deck.toLowerCase()}.md`;
+      console.log(this.contentPath);
     });
   }
 

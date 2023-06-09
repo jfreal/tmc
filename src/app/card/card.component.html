@@ -7,33 +7,39 @@
   <div class="row mt-2">
     <div class="col-8">
       <div style="background-color: #e6e6e6; border-radius: 20px; padding: 10px;">
-        <div class="row">
-          <div class="col-12">
-            <div class="mc">{{card.cost}}</div>
-            <div class="float-left ">
+        <div class="d-flex justify-content-between">
+
+          <div class="mc mt-2">{{card.cost}}</div>
+          <div>
+            <div>
               <h1>{{card.cardName}}</h1>
             </div>
-            <div class="float-right ">
-              <div *ngFor="let i of counter(card.tagScience) " class="tag science "><i class="fas fa-atom "></i></div>
-              <div *ngFor="let i of counter(card.tagBuilding) " class="tag building "><i class="fas fa-warehouse "></i>
-              </div>
-              <div *ngFor="let i of counter(card.tagSpace) " class="tag space "><i class="fas fa-haykal "></i></div>
-              <div *ngFor="let i of counter(card.tagMicrobe) " class="tag microbe "><i class="fas fa-bug "></i></div>
-              <div *ngFor="let i of counter(card.tagPlant) " class="tag plant "><i class="fas fa-leaf "></i></div>
-              <div *ngFor="let i of counter(card.tagAnimal) " class="tag animal "><i class="fas fa-paw "></i></div>
-              <div *ngFor="let i of counter(card.tagCity) " class="tag city "><i class="fas fa-city "></i> </div>
-              <div *ngFor="let i of counter(card.tagEarth) " class="tag earth "><i class="fas fa-globe-americas "></i>
-              </div>
-              <div *ngFor="let i of counter(card.tagJovian) " class="tag jovian "></div>
-              <div *ngFor="let i of counter(card.tagEnergy) " class="tag energy "><i class="fas fa-bolt "></i></div>
-              <div *ngFor="let i of counter(card.tagVenus) " class="tag venus ">V</div>
-              <div *ngFor="let i of counter(card.tagEvent) " class="tag event "><i
-                  class="fas fa-long-arrow-alt-down "></i>
-              </div>
+          </div>
+          <div class="float-end mt-2">
+            <div *ngFor="let i of counter(card.tagScience) " class="tag science "><i class="fas fa-atom "></i>
+            </div>
+            <div *ngFor="let i of counter(card.tagBuilding) " class="tag building "><i class="fas fa-warehouse "></i>
+            </div>
+            <div *ngFor="let i of counter(card.tagSpace) " class="tag space "><i class="fas fa-haykal "></i></div>
+            <div *ngFor="let i of counter(card.tagMicrobe) " class="tag microbe "><i class="fas fa-bug "></i>
+            </div>
+            <div *ngFor="let i of counter(card.tagPlant) " class="tag plant "><i class="fas fa-leaf "></i></div>
+            <div *ngFor="let i of counter(card.tagAnimal) " class="tag animal "><i class="fas fa-paw "></i></div>
+            <div *ngFor="let i of counter(card.tagCity) " class="tag city "><i class="fas fa-city "></i> </div>
+            <div *ngFor="let i of counter(card.tagEarth) " class="tag earth "><i class="fas fa-globe-americas "></i>
+            </div>
+            <div *ngFor="let i of counter(card.tagJovian) " class="tag jovian "></div>
+            <div *ngFor="let i of counter(card.tagEnergy) " class="tag energy "><i class="fas fa-bolt "></i></div>
+            <div *ngFor="let i of counter(card.tagVenus) " class="tag venus ">V</div>
+            <div *ngFor="let i of counter(card.tagEvent) " class="tag event "><i
+                class="fas fa-long-arrow-alt-down "></i>
             </div>
           </div>
         </div>
-        <p>{{card.text}}</p>
+        <hr />
+        <div class="mt-4">
+          <p>{{card.text}}</p>
+        </div>
         <p>{{card.effect}}</p>
         <app-production-box [card]="card"></app-production-box>
       </div>
@@ -54,5 +60,33 @@
         </tr>
       </table>
     </div>
+    <div class="row">
+      <div class="col-8">
+        <div markdown [src]="contentPath" class="mt-4"></div>
+      </div>
+      <div class="col-4" *ngIf="card.deck == 'Prelude'">
+        <img src="/assets/img/prelude.jpg" alt="Prelude" class="img-fluid p-2 shadow rounded" />
+
+        <a class="btn btn-amazon mt-4" href="https://amzn.to/43xIBDn">Buy Now from Amazon</a>
+        <p class="text-body-secondary fs-6 mt-2">If you click this link and make a purchase, we earn a commission at no
+          additional
+          cost to
+          you.
+        </p>
+      </div>
+
+      <div class="col-4" *ngIf="card.deck == 'Colonies'">
+        <img src="/assets/img/colonies.jpg" alt="colonies" class="img-fluid p-2 shadow rounded" />
+
+        <a class="btn btn-amazon mt-4" href="https://amzn.to/43V8SLP">Buy Now from Amazon</a>
+        <p class="text-body-secondary fs-6 mt-2">If you click this link and make a purchase, we earn a commission at no
+          additional
+          cost to
+          you.
+        </p>
+      </div>
+
+    </div>
   </div>
+
 </div>

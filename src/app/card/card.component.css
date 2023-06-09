@@ -1,6 +1,4 @@
 h1 {
-  font-size: 26px;
-  font-weight: 900;
   margin-left: 12px;
 }
 
@@ -10,4 +8,10 @@ h1 {
 
 .mc {
   float: left;
+}
+
+.btn-amazon {
+  background-color: #ff9900;
+  color: #000;
+  font-weight: bold;
 }

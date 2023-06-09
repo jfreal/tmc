@@ -10,7 +10,10 @@ export class QuantityDisplayComponent implements OnInit {
   @Input() quantity: string
   @Input() card: object
 
-  constructor() { }
+  constructor() {
+    this.quantity = ''
+    this.card = {}
+  }
 
   ngOnInit() {
   }

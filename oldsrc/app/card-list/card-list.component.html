@@ -1,0 +1,209 @@
+<div class="row">
+  <div class="col-12">
+    <div class="btn-toolbar justify-content-between">
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text" id="btnGroupAddon">Search</div>
+        </div>
+        <input type="text" class="form-control" placeholder="card name" aria-describedby="btnGroupAddon"
+          id="cardNameSearchInput">
+      </div>
+
+      <!-- This code could have probably been another component but it was too easy to type this code out -->
+
+      <div class="btn-group tag-buttons flex-wrap-reverse mt-2 mt-sm-0" role="group">
+        <button class="btn btn-light d-none d-sm-block" disabled>Filter by Tag</button>
+        <button (click)="onTagClick('science')" type="button" [ngClass]="{'active': tags.includes('science')}"
+          class="btn btn-light active">
+          <div class="tag science"><i class="fas fa-atom "></i></div>
+        </button>
+        <button (click)="onTagClick('building')" type="button" [ngClass]="{'active': tags.includes('building')}"
+          class="btn btn-light active">
+          <div class="tag building"><i class="fas fa-warehouse "></i></div>
+        </button>
+        <button (click)="onTagClick('space')" type="button" [ngClass]="{'active': tags.includes('space')}"
+          class="btn btn-light active">
+          <div class="tag space"><i class="fas fa-haykal "></i></div>
+        </button>
+        <button (click)="onTagClick('microbe')" type="button" [ngClass]="{'active': tags.includes('microbe')}"
+          class="btn btn-light active">
+          <div class="tag microbe"><i class="fas fa-bug "></i></div>
+        </button>
+        <button (click)="onTagClick('plant')" type="button" [ngClass]="{'active': tags.includes('plant')}"
+          class="btn btn-light active">
+          <div class="tag plant"><i class="fas fa-leaf "></i></div>
+        </button>
+        <button (click)="onTagClick('animal')" type="button" [ngClass]="{'active': tags.includes('animal')}"
+          class="btn btn-light active">
+          <div class="tag animal"><i class="fas fa-paw"></i></div>
+        </button>
+        <button (click)="onTagClick('city')" type="button" [ngClass]="{'active': tags.includes('city')}"
+          class="btn btn-light active">
+          <div class="tag city"><i class="fas fa-city "></i></div>
+        </button>
+        <button (click)="onTagClick('earth')" type="button" [ngClass]="{'active': tags.includes('earth')}"
+          class="btn btn-light active">
+          <div class="tag earth"><i class="fas fa-globe-americas"></i></div>
+        </button>
+        <button (click)="onTagClick('jovian')" type="button" [ngClass]="{'active': tags.includes('jovian')}"
+          class="btn btn-light active">
+          <div class="tag jovian"></div>
+        </button>
+        <button (click)="onTagClick('energy')" type="button" [ngClass]="{'active': tags.includes('energy')}"
+          class="btn btn-light active">
+          <div class="tag energy"><i class="fas fa-bolt"></i></div>
+        </button>
+        <button (click)="onTagClick('venus')" type="button" [ngClass]="{'active': tags.includes('venus')}"
+          class="btn btn-light active">
+          <div class="tag venus">V</div>
+        </button>
+        <button (click)="onTagClick('event')" type="button" [ngClass]="{'active': tags.includes('event')}"
+          class="btn btn-light active">
+          <div class="tag event"><i class="fas fa-long-arrow-alt-down"></i></div>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="mt-2 text-right">
+      Hover over <i class="fas fa-asterisk"></i> for quantity details.
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-sm mt-4">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cost</th>
+            <th>Name</th>
+            <th class="d-none d-sm-table-cell">Req</th>
+            <th></th>
+            <th class="d-none d-sm-table-cell">Deck</th>
+            <th>Tags 🖱️</th>
+            <th>Prod</th>
+            <th class="d-none d-sm-table-cell">Inv</th>
+            <th class="d-none d-sm-table-cell">VP</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let card of cards">
+          <td class="type">
+            <div class=type-{{card[3]}}></div>
+          </td>
+          <td>
+            <div class="mc">{{card[2]}}</div>
+          </td>
+          <td class="card-title">
+            <a routerLink="/card/{{card[0].replace(' ', '-') | urlify}}">{{card[0]}}</a>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div *ngIf="card[5] > -30">≥{{card[5]}} <i class="fas fa-thermometer-full"></i></div>
+            <div *ngIf="card[6] > 0">≥{{card[6]}}% O<sub>2</sub></div>
+            <div *ngIf="card[7] > 0">
+              <div class="hexagon-container">
+                ≥{{card[7]}} <div class="hexagon float-right"></div>
+              </div>
+            </div>
+            <div *ngIf="card[8] > 0">
+              <div>
+                ≥{{card[8]}} V
+              </div>
+            </div>
+            <div *ngIf="card[9] < 8">
+              ≤{{card[9]}} <i class="fas fa-thermometer-full"></i>
+            </div>
+            <div *ngIf="card[10] < 14">
+              ≤{{card[10]}}% O<sub>2</sub>
+            </div>
+            <div *ngIf="card[11] < 9">
+              <div class="hexagon-container">
+                ≤{{card[7]}} <div class="hexagon float-right"></div>
+              </div>
+            </div>
+            <div *ngIf="card[12] < 30">
+              ≤{{card[12]}}% V
+            </div>
+          </td>
+          <td></td>
+          <td class="d-none d-sm-table-cell" title="{{card[4]}}">{{card[4]}}</td>
+          <td class="tags-column">
+            <a (click)="onTagClick('science')">
+              <div *ngFor=" let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i>
+              </div>
+            </a>
+            <a (click)="onTagClick('building')">
+              <div *ngFor="let i of counter(card[28])" class="tag building"><i class="fas fa-warehouse "></i></div>
+            </a>
+            <a (click)="onTagClick('space')">
+              <div *ngFor="let i of counter(card[29])" class="tag space"><i class="fas fa-haykal "></i></div>
+            </a>
+            <a (click)="onTagClick('microbe')">
+              <div *ngFor="let i of counter(card[30])" class="tag microbe"><i class="fas fa-bug "></i></div>
+            </a>
+            <a (click)="onTagClick('plant')">
+              <div *ngFor="let i of counter(card[31])" class="tag plant"><i class="fas fa-leaf "></i></div>
+            </a>
+            <a (click)="onTagClick('animal')">
+              <div *ngFor="let i of counter(card[32])" class="tag animal"><i class="fas fa-paw "></i></div>
+            </a>
+            <a (click)="onTagClick('city')">
+              <div *ngFor="let i of counter(card[33])" class="tag city"><i class="fas fa-city "></i> </div>
+            </a>
+            <a (click)="onTagClick('earth')">
+              <div *ngFor="let i of counter(card[34])" class="tag earth"><i class="fas fa-globe-americas "></i></div>
+            </a>
+            <a (click)="onTagClick('jovian')">
+              <div *ngFor="let i of counter(card[35])" class="tag jovian"></div>
+            </a>
+            <a (click)="onTagClick('energy')">
+              <div *ngFor="let i of counter(card[36])" class="tag energy"><i class="fas fa-bolt "></i></div>
+            </a>
+            <a (click)="onTagClick('venus')">
+              <div *ngFor="let i of counter(card[37])" class="tag venus">V</div>
+            </a>
+            <a (click)="onTagClick('event')">
+              <div *ngFor="let i of counter(card[38])" class="tag event"><i class="fas fa-long-arrow-alt-down "></i>
+              </div>
+            </a>
+          </td>
+          <td>
+            <app-production-box [card]="card"></app-production-box>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div *ngIf="card[47] !== '0'" class="prod-box">
+              <div class="prod mc">
+                <strong>
+                  <app-quantity-display [card]="card" [quantity]="card[47]"></app-quantity-display>
+                </strong>
+              </div>
+            </div>
+            <div *ngIf="card[48] !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card[48]"></app-quantity-display>
+              <div class="prod steel"><i class="fas fa-hammer"></i></div>
+            </div>
+            <div *ngIf="card[49] !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card[49]"></app-quantity-display>
+              <div class="prod titanium"><i class="far fa-star"></i></div>
+            </div>
+            <div *ngIf="card[50] !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card[50]"></app-quantity-display>
+              <div class="prod plant"><i class="fas fa-leaf "></i></div>
+            </div>
+            <div *ngIf="card[51] !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card[51]"></app-quantity-display>
+              <div class="prod energy"><i class="fas fa-bolt "></i></div>
+            </div>
+            <div *ngIf="card[52] !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card[52]"></app-quantity-display>
+              <div class="prod heat"><i class="fas fa-fire "></i></div>
+            </div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

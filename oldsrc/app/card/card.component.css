@@ -1,0 +1,13 @@
+h1 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-left: 12px;
+}
+
+.tag {
+  margin-left: 3px;
+}
+
+.mc {
+  float: left;
+}

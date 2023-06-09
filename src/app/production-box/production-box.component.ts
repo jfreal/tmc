@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Card } from '../models/card';
 
 @Component({
   selector: 'app-production-box',
@@ -7,9 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductionBoxComponent implements OnInit {
 
-  @Input() card: object;
+  @Input()
+  card!: Card;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

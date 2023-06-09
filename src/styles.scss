@@ -479,13 +479,17 @@ td.type {
   border-radius: 3px;
   background: linear-gradient(to bottom right, #F9E100, #F18F00);
   border: 2px solid #000;
+  /* override bootstrap */
+  border-bottom-width: 2px !important;
   font-weight: bold;
   text-align: center;
-  vertical-align: center;
+  vertical-align: middle;
+  padding: 1px 0 0 0 !important;
 }
 
 a {
-  color: #47a5ed
+  color: #47a5ed;
+  text-decoration: none;
 }
 
 #header {

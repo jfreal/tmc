@@ -17,16 +17,20 @@ export class CardComponent implements OnInit {
     private cardService: CardsService,
     private route: ActivatedRoute,
     private titleService: Title
-  ) { }
+  ) {
+    this.cardNameParam = '';
+  }
 
   ngOnInit() {
     this.getCard();
   }
 
-  getCard(): void {
-    this.cardNameParam = this.route.snapshot.paramMap.get('cardName');
+  async getCard(): Promise<void> {
+    this.cardNameParam = this.route.snapshot.paramMap.get('cardName') ?? '';
 
-    this.cardService.getCard(this.cardNameParam).subscribe(r => {
+    var card = await this.cardService.getCard(this.cardNameParam);
+
+    card.subscribe(r => {
       this.card = r;
       this.titleService.setTitle(this.card[0]);
     });

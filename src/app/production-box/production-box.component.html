@@ -1,28 +1,31 @@
-<div *ngIf="card[1] !== '86' && (card[40] !== '0' || card[41] !== '0' || card[42] !== '0' || card[43] !== '0' || card[44] !== '0' || card[45] !== '0')"
+<div
+  *ngIf="card[1] !== '86' && (card.prodMegacredit !== '' || card.prodSteel !== '0' || card.prodTitanium !== '0' || card.prodPlant !== '0' || card.prodEnergy !== '0' || card.prodHeat !== '0')"
   class="production-bg">
-  <div *ngIf="card[40] !== '0'" class="prod-box">
-    <div class="prod mc"><strong>
-        <app-quantity-display [card]="card" [quantity]="card[40]"></app-quantity-display>
-      </strong></div>
+  <div *ngIf="card.prodMegacredit !== ''" class="prod-box">
+    <div class="prod mc">
+      <strong>
+        <app-quantity-display [card]="card" [quantity]="card.prodMegacredit"></app-quantity-display>
+      </strong>
+    </div>
   </div>
-  <div *ngIf="card[41] !== '0'" class="prod-box">
-    <app-quantity-display [card]="card" [quantity]="card[41]"></app-quantity-display>
+  <div *ngIf="card.prodSteel !== '0'" class="prod-box">
+    <app-quantity-display [card]="card" [quantity]="card.prodSteel"></app-quantity-display>
     <div class="prod steel"><i class="fas fa-hammer"></i></div>
   </div>
-  <div *ngIf="card[42] !== '0'" class="prod-box">
-    <app-quantity-display [card]="card" [quantity]="card[42]"></app-quantity-display>
+  <div *ngIf="card.prodTitanium !== '0'" class="prod-box">
+    <app-quantity-display [card]="card" [quantity]="card.prodTitanium"></app-quantity-display>
     <div class="prod titanium"><i class="far fa-star"></i></div>
   </div>
-  <div *ngIf="card[43] !== '0'" class="prod-box">
-    <app-quantity-display [card]="card" [quantity]="card[43]"></app-quantity-display>
+  <div *ngIf="card.prodPlant !== '0'" class="prod-box">
+    <app-quantity-display [card]="card" [quantity]="card.prodPlant"></app-quantity-display>
     <div class="prod plant"><i class="fas fa-leaf "></i></div>
   </div>
-  <div *ngIf="card[44] !== '0'" class="prod-box">
-    <app-quantity-display [card]="card" [quantity]="card[44]"></app-quantity-display>
+  <div *ngIf="card.prodEnergy !== '0'" class="prod-box">
+    <app-quantity-display [card]="card" [quantity]="card.prodEnergy"></app-quantity-display>
     <div class="prod energy"><i class="fas fa-bolt "></i></div>
   </div>
-  <div *ngIf="card[45] !== '0'" class="prod-box">
-    <app-quantity-display [card]="card" [quantity]="card[45]"></app-quantity-display>
+  <div *ngIf="card.prodHeat !== '0'" class="prod-box">
+    <app-quantity-display [card]="card" [quantity]="card.prodHeat"></app-quantity-display>
     <div class="prod heat"><i class="fas fa-fire "></i></div>
   </div>
 </div>

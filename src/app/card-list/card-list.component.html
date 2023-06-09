@@ -70,7 +70,7 @@
       Hover over <i class="fas fa-asterisk"></i> for quantity details.
     </div>
 
-    <div class="table-responsive">
+    <div class="table table-sm">
       <table class="table table-sm mt-4">
         <thead>
           <tr>
@@ -88,81 +88,84 @@
         </thead>
         <tr *ngFor="let card of cards">
           <td class="type">
-            <div class=type-{{card[3]}}></div>
+            <div class=type-{{card.cost}}></div>
           </td>
           <td>
-            <div class="mc">{{card[2]}}</div>
+            <div class="mc">{{card.cost}}</div>
           </td>
           <td class="card-title">
-            <a routerLink="/card/{{card[0].replace(' ', '-') | urlify}}">{{card[0]}}</a>
+            <a routerLink="/card/{{card.cardName.replace(' ', '-') | urlify}}">{{card.cardName}}</a>
           </td>
           <td class="d-none d-sm-table-cell">
-            <div *ngIf="card[5] > -30">≥{{card[5]}} <i class="fas fa-thermometer-full"></i></div>
-            <div *ngIf="card[6] > 0">≥{{card[6]}}% O<sub>2</sub></div>
-            <div *ngIf="card[7] > 0">
+            <div *ngIf="card.reqTemp > -30">≥{{card.reqTemp}} <i class="fas fa-thermometer-full"></i></div>
+            <div *ngIf="card.reqOxygen > 0">≥{{card.reqOxygen}}% O<sub>2</sub></div>
+            <div *ngIf="card.reqOcean > 0">
               <div class="hexagon-container">
-                ≥{{card[7]}} <div class="hexagon float-right"></div>
+                ≥{{card.reqOcean}} <div class="hexagon float-right"></div>
               </div>
             </div>
-            <div *ngIf="card[8] > 0">
+            <div *ngIf="card.reqVenus > 0">
               <div>
-                ≥{{card[8]}} V
+                ≥{{card.reqVenus}} V
               </div>
             </div>
-            <div *ngIf="card[9] < 8">
-              ≤{{card[9]}} <i class="fas fa-thermometer-full"></i>
+            <div *ngIf="card.reqMaxTemp < 8">
+              ≤{{card.reqMaxTemp}} <i class="fas fa-thermometer-full"></i>
             </div>
-            <div *ngIf="card[10] < 14">
-              ≤{{card[10]}}% O<sub>2</sub>
+            <div *ngIf="card.reqMaxOxygen< 14">
+              ≤{{card.reqMaxOxygen}}% O<sub>2</sub>
             </div>
-            <div *ngIf="card[11] < 9">
+            <div *ngIf="card.reqMaxOcean < 9">
               <div class="hexagon-container">
-                ≤{{card[7]}} <div class="hexagon float-right"></div>
+                ≤{{card.reqMaxOcean}} <div class="hexagon float-right"></div>
               </div>
             </div>
-            <div *ngIf="card[12] < 30">
-              ≤{{card[12]}}% V
+            <div *ngIf="card.reqMaxVenus < 30">
+              ≤{{card.reqMaxVenus}}% V
             </div>
           </td>
           <td></td>
-          <td class="d-none d-sm-table-cell" title="{{card[4]}}">{{card[4]}}</td>
+          <td class="d-none d-sm-table-cell" title="{{card.deck}}">{{card.deck}}</td>
           <td class="tags-column">
             <a (click)="onTagClick('science')">
-              <div *ngFor=" let i of counter(card[27])" class="tag science"><i class="fas fa-atom "></i>
+              <div *ngFor=" let i of counter(card.tagScience)" class="tag science"><i class="fas fa-atom "></i>
               </div>
             </a>
             <a (click)="onTagClick('building')">
-              <div *ngFor="let i of counter(card[28])" class="tag building"><i class="fas fa-warehouse "></i></div>
+              <div *ngFor="let i of counter(card.tagBuilding)" class="tag building"><i class="fas fa-warehouse "></i>
+              </div>
             </a>
             <a (click)="onTagClick('space')">
-              <div *ngFor="let i of counter(card[29])" class="tag space"><i class="fas fa-haykal "></i></div>
+              <div *ngFor="let i of counter(card.tagSpace)" class="tag space"><i class="fas fa-haykal "></i></div>
             </a>
             <a (click)="onTagClick('microbe')">
-              <div *ngFor="let i of counter(card[30])" class="tag microbe"><i class="fas fa-bug "></i></div>
+              <div *ngFor="let i of counter(card.tagMicrobe)" class="tag microbe"><i class="fas fa-bug "></i></div>
             </a>
             <a (click)="onTagClick('plant')">
-              <div *ngFor="let i of counter(card[31])" class="tag plant"><i class="fas fa-leaf "></i></div>
+              <div *ngFor="let i of counter(card.tagPlant)" class="tag plant"><i class="fas fa-leaf "></i></div>
             </a>
             <a (click)="onTagClick('animal')">
-              <div *ngFor="let i of counter(card[32])" class="tag animal"><i class="fas fa-paw "></i></div>
+              <div *ngFor="let i of counter(card.tagAnimal)" class="tag animal"><i class="fas fa-paw "></i></div>
             </a>
             <a (click)="onTagClick('city')">
-              <div *ngFor="let i of counter(card[33])" class="tag city"><i class="fas fa-city "></i> </div>
+              <div *ngFor="let i of counter(card.tagCity)" class="tag city"><i class="fas fa-city "></i> </div>
             </a>
             <a (click)="onTagClick('earth')">
-              <div *ngFor="let i of counter(card[34])" class="tag earth"><i class="fas fa-globe-americas "></i></div>
+              <div *ngFor="let i of counter(card.tagEarth)" class="tag earth"><i class="fas fa-globe-americas "></i>
+              </div>
             </a>
             <a (click)="onTagClick('jovian')">
-              <div *ngFor="let i of counter(card[35])" class="tag jovian"></div>
+              <div *ngFor="let i of counter(card.tagJovian)" class="tag jovian"></div>
             </a>
             <a (click)="onTagClick('energy')">
-              <div *ngFor="let i of counter(card[36])" class="tag energy"><i class="fas fa-bolt "></i></div>
+              <div *ngFor="let i of counter(card.tagEnergy)" class="tag energy"><i class="fas fa-bolt "></i></div>
             </a>
             <a (click)="onTagClick('venus')">
-              <div *ngFor="let i of counter(card[37])" class="tag venus">V</div>
+              <div *ngFor="let i of counter(card.tagVenus)" class="tag venus">V</div>
             </a>
             <a (click)="onTagClick('event')">
-              <div *ngFor="let i of counter(card[38])" class="tag event"><i class="fas fa-long-arrow-alt-down "></i>
+              <div *ngFor="let i of counter(card.tagEvent)" class="tag event"><i
+                  class="fas fa-long-arrow-alt-down "></i>
               </div>
             </a>
           </td>
@@ -170,37 +173,36 @@
             <app-production-box [card]="card"></app-production-box>
           </td>
           <td class="d-none d-sm-table-cell">
-            <div *ngIf="card[47] !== '0'" class="prod-box">
+            <div *ngIf="card.invMegacredit !== ''" class="prod-box">
               <div class="prod mc">
                 <strong>
-                  <app-quantity-display [card]="card" [quantity]="card[47]"></app-quantity-display>
+                  <app-quantity-display [card]="card" [quantity]="card.invMegacredit"></app-quantity-display>
                 </strong>
               </div>
             </div>
-            <div *ngIf="card[48] !== '0'" class="prod-box">
-              <app-quantity-display [card]="card" [quantity]="card[48]"></app-quantity-display>
+            <div *ngIf="card.invSteel !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card.invSteel"></app-quantity-display>
               <div class="prod steel"><i class="fas fa-hammer"></i></div>
             </div>
-            <div *ngIf="card[49] !== '0'" class="prod-box">
-              <app-quantity-display [card]="card" [quantity]="card[49]"></app-quantity-display>
+            <div *ngIf="card.invTitanium !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card.invTitanium"></app-quantity-display>
               <div class="prod titanium"><i class="far fa-star"></i></div>
             </div>
-            <div *ngIf="card[50] !== '0'" class="prod-box">
-              <app-quantity-display [card]="card" [quantity]="card[50]"></app-quantity-display>
+            <div *ngIf="card.invPlant !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card.invPlant"></app-quantity-display>
               <div class="prod plant"><i class="fas fa-leaf "></i></div>
             </div>
-            <div *ngIf="card[51] !== '0'" class="prod-box">
-              <app-quantity-display [card]="card" [quantity]="card[51]"></app-quantity-display>
+            <div *ngIf="card.invEnergy !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card.invEnergy"></app-quantity-display>
               <div class="prod energy"><i class="fas fa-bolt "></i></div>
             </div>
-            <div *ngIf="card[52] !== '0'" class="prod-box">
-              <app-quantity-display [card]="card" [quantity]="card[52]"></app-quantity-display>
+            <div *ngIf="card.invHeat !== '0'" class="prod-box">
+              <app-quantity-display [card]="card" [quantity]="card.invHeat"></app-quantity-display>
               <div class="prod heat"><i class="fas fa-fire "></i></div>
             </div>
           </td>
           <td class="d-none d-sm-table-cell">
-            <div *ngIf="card[60]==='1' " class="tag vp ">{{card[60]}}
-            </div>
+            <div *ngIf="card.vp !=='0'" class="tag vp ">{{card.vp}}</div>
           </td>
         </tr>
       </table>

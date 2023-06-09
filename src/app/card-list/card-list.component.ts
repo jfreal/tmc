@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 import { Title } from '@angular/platform-browser';
+import { Card } from '../models/card';
 
 
 @Component({
@@ -12,11 +13,12 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit {
-  cards: any[];
+  cards: Card[];
   tags: string[];
 
   constructor(private cardsService: CardsService, private route: ActivatedRoute, private router: Router, private titleService: Title) {
     this.tags = [];
+    this.cards = [];
   }
 
   filterCardsByTags() {
@@ -24,23 +26,55 @@ export class CardListComponent implements OnInit {
     this.cardsService.getCards().subscribe(data => {
       let cards = data;
 
-      let cardTagMap = {
-        'science': 27,
-        'building': 28,
-        'space': 29,
-        'microbe': 30,
-        'plant': 31,
-        'animal': 32,
-        'city': 33,
-        'earth': 34,
-        'jovian': 35,
-        'energy': 36,
-        'venus': 37,
-        'event': 38
-      };
-
       for (var tag of this.tags) {
-        cards = cards.filter(x => x[cardTagMap[tag]] !== '0')
+
+        if (tag === 'science') {
+          cards = cards.filter(x => x.tagScience !== '0')
+        }
+
+        if (tag === 'building') {
+          cards = cards.filter(x => x.tagBuilding !== '0')
+        }
+
+        if (tag === 'space') {
+          cards = cards.filter(x => x.tagSpace !== '0')
+        }
+
+        if (tag === 'microbe') {
+          cards = cards.filter(x => x.tagMicrobe !== '0')
+        }
+
+        if (tag === 'plant') {
+          cards = cards.filter(x => x.tagPlant !== '0')
+        }
+
+        if (tag === 'animal') {
+          cards = cards.filter(x => x.tagAnimal !== '0')
+        }
+
+        if (tag === 'city') {
+          cards = cards.filter(x => x.tagCity !== '0')
+        }
+
+        if (tag === 'earth') {
+          cards = cards.filter(x => x.tagEarth !== '0')
+        }
+
+        if (tag === 'jovian') {
+          cards = cards.filter(x => x.tagJovian !== '0')
+        }
+
+        if (tag === 'energy') {
+          cards = cards.filter(x => x.tagEnergy !== '0')
+        }
+
+        if (tag === 'venus') {
+          cards = cards.filter(x => x.tagVenus !== '0')
+        }
+
+        if (tag === 'event') {
+          cards = cards.filter(x => x.tagEvent !== '0')
+        }
       }
 
       this.cards = cards;
@@ -84,15 +118,15 @@ export class CardListComponent implements OnInit {
     this.route.queryParams
       .subscribe(params => {
 
-        if (params.tags) {
-          this.tags = params.tags.split(',');
+        if (params['tags']) {
+          this.tags = params['tags'].split(',');
         }
 
         this.filterCardsByTags()
       });
 
     const typeahead = fromEvent(document.getElementById('cardNameSearchInput') as HTMLTextAreaElement, 'input').pipe(
-      map((e: KeyboardEvent) => (<HTMLInputElement>e.target).value),
+      map((e: Event) => (<HTMLInputElement>e.target).value),
       filter(text => text.length > 2 || text === ''),
       debounceTime(50)
     );
@@ -100,8 +134,7 @@ export class CardListComponent implements OnInit {
     typeahead.subscribe(searchValue => {
       // Handle the data from the API
       this.cardsService.getCards().subscribe(data => {
-        this.cards = data.filter(card => card[0].toLowerCase().includes(searchValue.toLowerCase()))
-        console.log(searchValue)
+        this.cards = data.filter(card => card.cardName.toLowerCase().includes(searchValue.toLowerCase()))
       });
     });
   };

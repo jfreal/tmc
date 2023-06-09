@@ -34,7 +34,7 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "papaparse/papaparse"
+              "papaparse/papaparse.min.js"
             ]
           },
           "configurations": {

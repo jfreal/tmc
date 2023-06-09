@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CardsService } from '../cards.service';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
+import { Card } from '../models/card';
+
 
 @Component({
   selector: 'app-card',
@@ -17,7 +19,8 @@ export class CardComponent implements OnInit {
   constructor(
     private cardService: CardsService,
     private route: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private metaService: Meta
   ) {
     this.cardNameParam = '';
     this.contentPath = '';
@@ -30,13 +33,13 @@ export class CardComponent implements OnInit {
   async getCard(): Promise<void> {
     this.cardNameParam = this.route.snapshot.paramMap.get('cardName') ?? '';
 
-    var card = await this.cardService.getCard(this.cardNameParam);
+    var card = this.cardService.getCard(this.cardNameParam);
 
-    card.subscribe(r => {
+    card.subscribe((r: Card) => {
       this.card = r;
-      this.titleService.setTitle(r.cardName);
+      this.titleService.setTitle('Terraforming Mars Card - ' + r.cardName);
+      this.metaService.addTag({ name: 'description', content: r.cardName + ' is a card in Terraforming Mars.' });
       this.contentPath = `./assets/content/${r.deck.toLowerCase()}.md`;
-      console.log(this.contentPath);
     });
   }
 

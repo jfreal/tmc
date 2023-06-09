@@ -94,11 +94,10 @@ export class CardListComponent implements OnInit {
     return Array(0);
   }
 
-  onTagClick(tag) {
+  onTagClick(tag: string) {
 
     if (this.tags.includes(tag)) {
       let index = this.tags.indexOf(tag);
-      console.log(index);
       this.tags.splice(index, 1);
     } else {
       this.tags.push(tag);

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Papa } from 'ngx-papaparse';
-import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take, filter } from 'rxjs/operators';
 import { Card } from './models/card';
 
 // I regret not casting cards to a static type
@@ -14,7 +13,6 @@ import { Card } from './models/card';
   providedIn: 'root'
 })
 export class CardsService {
-  url: string;
 
   private getCardData(): Observable<Card[]> {
 
@@ -23,31 +21,22 @@ export class CardsService {
 
       var arr: Card[] = [];
 
-      arr = parsed.data.map(x => (<Card>{ ...x }));
-
-      console.log(arr);
-
-      //console.log(parsed.data);
-
-      //removing header rows and actual card types we don't have a great UI for
-      var filteredCards = parsed.data.filter(x => x[0] !== 'Card Name');
-      filteredCards = filteredCards.filter(x => x[0] !== 'Card Identifiers');
-      filteredCards = filteredCards.filter(x => ['Active', 'Event', 'Automated'].includes(x[3]));
+      arr = parsed.data.map((x: Card) => (<Card>{ ...x }));
 
       return arr;
     }));
   }
 
-  async getCard(cardName: string): Promise<any> {
+  getCard(cardName: string): Observable<Card> {
 
-    var cards = await this.getCardData();
+    let cards$ = this.getCardData();
 
-    return cards.pipe(map(response => {
+    return cards$.pipe(take(1), map(response => {
       return response.filter(x => x.cardName.toLocaleLowerCase().replace(/ /g, '-') === cardName)[0];
     }))
   }
 
-  cards: any[];
+  cards: Card[];
 
   getCards(): Observable<Card[]> {
     var cardData = this.getCardData();
@@ -56,7 +45,6 @@ export class CardsService {
   }
 
   constructor(private papa: Papa, private http: HttpClient) {
-    this.url = environment.production ? "https://terraformingmars.cards/" : "http://localhost:4200/"
     this.cards = [];
   }
 }

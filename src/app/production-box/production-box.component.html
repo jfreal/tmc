@@ -1,5 +1,5 @@
 <div
-  *ngIf="card[1] !== '86' && (card.prodMegacredit !== '' || card.prodSteel !== '0' || card.prodTitanium !== '0' || card.prodPlant !== '0' || card.prodEnergy !== '0' || card.prodHeat !== '0')"
+  *ngIf="card.cardNumber !== '86' && (card.prodMegacredit !== '' || card.prodSteel !== '0' || card.prodTitanium !== '0' || card.prodPlant !== '0' || card.prodEnergy !== '0' || card.prodHeat !== '0')"
   class="production-bg">
   <div *ngIf="card.prodMegacredit !== ''" class="prod-box">
     <div class="prod mc">
@@ -29,6 +29,6 @@
     <div class="prod heat"><i class="fas fa-fire "></i></div>
   </div>
 </div>
-<div *ngIf="card[1] === '86'" class="production-bg">
+<div *ngIf="card.cardNumber === '86'" class="production-bg">
   COPY
 </div>

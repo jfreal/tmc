@@ -7,9 +7,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noImplicitAny": false,
-    // fix me
-    "suppressImplicitAnyIndexErrors": true,
     "ignoreDeprecations": "5.0",
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
